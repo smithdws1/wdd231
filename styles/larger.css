@@ -1,14 +1,15 @@
+/* Media query for larger screens (desktop layout) */
 @media (min-width: 768px) {
     header {
         justify-content: center;
     }
-/* Hide hamburger on desktop view*/
+
     .hamburger {
-        display: none; 
+        display: none; /* Hide hamburger on desktop */
     }
-/* Always visible on desktop view */
+
     .nav-menu {
-        max-height: none; 
+        max-height: none; /* Always visible on desktop */
     }
 
     nav ul {
@@ -42,6 +43,7 @@
         max-width: 300px;
     }
 
+    /* Ensure consistent spacing on desktop */
     section {
         padding: 2rem;
     }

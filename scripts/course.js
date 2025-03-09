@@ -9,10 +9,10 @@ document.addEventListener("DOMContentLoaded", () => {
         { code: "WDD 231", name: "Advanced Web Development", credits: 3, completed: false }
     ];
 
-    // Show completed status
-    courses[0].completed = true;
-    courses[1].completed = true;
-    courses[4].completed = true;
+    // Modify completed status (example: mark some as completed)
+    courses[0].completed = true; // CSE 110
+    courses[1].completed = true; // WDD 130
+    courses[4].completed = true; // WDD 131
 
     const courseList = document.querySelector(".course-list");
     const buttons = document.querySelectorAll(".course-buttons button");
@@ -34,21 +34,21 @@ document.addEventListener("DOMContentLoaded", () => {
             li.className = `course ${course.code.split(" ")[0].toLowerCase()}`;
             li.textContent = `${course.code} - ${course.name} (${course.credits} credits)`;
             if (course.completed) {
-                li.style.backgroundColor = "#E0F7FA";
-                li.style.borderLeft = "4px solid #2E7D32";
+                li.style.backgroundColor = "#E3F2FD"; // Light Blue for completed
+                li.style.borderLeft = "4px solid #1976D2"; // Bright Blue
             } else {
-                li.style.backgroundColor = "#F5F5F5";
-                li.style.borderLeft = "4px solid #D32F2F";
+                li.style.backgroundColor = "#F5F5F5"; // Light Gray for incomplete
+                li.style.borderLeft = "4px solid #E57373"; // Soft Red
             }
             courseList.appendChild(li);
         });
 
-        // Calculate total credits
+        // Calculate and display total credits
         const totalCredits = filteredCourses.reduce((sum, course) => sum + course.credits, 0);
         creditsDisplay.textContent = `Total Credits: ${totalCredits}`;
     }
 
-    // Event listener for filter buttons
+    // Event listeners for filter buttons
     buttons.forEach(button => {
         button.addEventListener("click", () => {
             buttons.forEach(btn => btn.classList.remove("active"));
@@ -58,5 +58,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
+    // Initial display
     displayCourses("all");
 });
