@@ -1,63 +1,96 @@
-document.addEventListener("DOMContentLoaded", () => {
-    // Course array from the assignment
-    let courses = [
-        { code: "CSE 110", name: "Introduction to Programming", credits: 3, completed: false },
-        { code: "WDD 130", name: "Web Fundamentals", credits: 2, completed: false },
-        { code: "CSE 111", name: "Programming with Functions", credits: 3, completed: false },
-        { code: "CSE 210", name: "Programming with Classes", credits: 3, completed: false },
-        { code: "WDD 131", name: "Dynamic Web Development", credits: 2, completed: false },
-        { code: "WDD 231", name: "Advanced Web Development", credits: 3, completed: false }
-    ];
-
-    // Modify completed status (example: mark some as completed)
-    courses[0].completed = true; // CSE 110
-    courses[1].completed = true; // WDD 130
-    courses[4].completed = true; // WDD 131
-
-    const courseList = document.querySelector(".course-list");
-    const buttons = document.querySelectorAll(".course-buttons button");
-    const creditsDisplay = document.createElement("p");
-    creditsDisplay.id = "credits-display";
-    document.querySelector(".certificate").appendChild(creditsDisplay);
-
-    // Function to display courses
-    function displayCourses(filter = "all") {
-        courseList.innerHTML = "";
-        let filteredCourses = courses;
-
-        if (filter !== "all") {
-            filteredCourses = courses.filter(course => course.code.startsWith(filter));
-        }
-
-        filteredCourses.forEach(course => {
-            const li = document.createElement("li");
-            li.className = `course ${course.code.split(" ")[0].toLowerCase()}`;
-            li.textContent = `${course.code} - ${course.name} (${course.credits} credits)`;
-            if (course.completed) {
-                li.style.backgroundColor = "#E3F2FD"; // Light Blue for completed
-                li.style.borderLeft = "4px solid #1976D2"; // Bright Blue
-            } else {
-                li.style.backgroundColor = "#F5F5F5"; // Light Gray for incomplete
-                li.style.borderLeft = "4px solid #E57373"; // Soft Red
-            }
-            courseList.appendChild(li);
-        });
-
-        // Calculate and display total credits
-        const totalCredits = filteredCourses.reduce((sum, course) => sum + course.credits, 0);
-        creditsDisplay.textContent = `Total Credits: ${totalCredits}`;
+const courses = [
+    {
+        subject: 'CSE',
+        number: 110,
+        title: 'Introduction to Programming',
+        credits: 2,
+        certificate: 'Web and Computer Programming',
+        description: 'This course will introduce students to programming. It will introduce the building blocks of programming languages (variables, decisions, calculations, loops, array, and input/output) and use them to solve problems.',
+        technology: ['Python'],
+        completed: true
+    },
+    {
+        subject: 'WDD',
+        number: 130,
+        title: 'Web Fundamentals',
+        credits: 2,
+        certificate: 'Web and Computer Programming',
+        description: 'This course introduces students to the World Wide Web and to careers in web site design and development. The course is hands on with students actually participating in simple web designs and programming. It is anticipated that students who complete this course will understand the fields of web design and development and will have a good idea if they want to pursue this degree as a major.',
+        technology: ['HTML', 'CSS'],
+        completed: true
+    },
+    {
+        subject: 'CSE',
+        number: 111,
+        title: 'Programming with Functions',
+        credits: 2,
+        certificate: 'Web and Computer Programming',
+        description: 'CSE 111 students become more organized, efficient, and powerful computer programmers by learning to research and call functions written by others; to write, call , debug, and test their own functions; and to handle errors within functions. CSE 111 students write programs with functions to solve problems in many disciplines, including business, physical science, human performance, and humanities.',
+        technology: ['Python'],
+        completed: true
+    },
+    {
+        subject: 'CSE',
+        number: 210,
+        title: 'Programming with Classes',
+        credits: 2,
+        certificate: 'Web and Computer Programming',
+        description: 'This course will introduce the notion of classes and objects. It will present encapsulation at a conceptual level. It will also work with inheritance and polymorphism.',
+        technology: ['C#'],
+        completed: true
+    },
+    {
+        subject: 'WDD',
+        number: 131,
+        title: 'Dynamic Web Fundamentals',
+        credits: 2,
+        certificate: 'Web and Computer Programming',
+        description: 'This course builds on prior experience in Web Fundamentals and programming. Students will learn to create dynamic websites that use JavaScript to respond to events, update content, and create responsive user experiences.',
+        technology: ['HTML', 'CSS', 'JavaScript'],
+        completed: true
+    },
+    {
+        subject: 'WDD',
+        number: 231,
+        title: 'Frontend Web Development I',
+        credits: 2,
+        certificate: 'Web and Computer Programming',
+        description: 'This course builds on prior experience with Dynamic Web Fundamentals and programming. Students will focus on user experience, accessibility, compliance, performance optimization, and basic API usage.',
+        technology: ['HTML', 'CSS', 'JavaScript'],
+        completed: false
     }
+];
 
-    // Event listeners for filter buttons
-    buttons.forEach(button => {
-        button.addEventListener("click", () => {
-            buttons.forEach(btn => btn.classList.remove("active"));
-            button.classList.add("active");
-            const filter = button.textContent === "All" ? "all" : button.textContent;
-            displayCourses(filter);
-        });
+document.addEventListener("DOMContentLoaded", () => {
+    const courseList = document.querySelector(".course-list");
+    const courseButtons = document.querySelector(".course-buttons");
+    const creditsDisplay = document.getElementById("credits-display");
+
+    // Create buttons with unique subjects
+    const subjects = [...new Set(courses.map(course => course.subject))];
+    courseButtons.innerHTML = `<button class="active">All</button>`;
+    subjects.forEach(subject => {
+        courseButtons.innerHTML += `<button>${subject}</button>`;
     });
 
+    // Display courses function
+    function displayCourses(filter = "All") {
+        const filteredCourses = filter === "All" ? courses : courses.filter(course => course.subject === filter);
+        courseList.innerHTML = filteredCourses.map(course => 
+            `<li ${course.completed ? 'class="completed"' : ''}>${course.subject} ${course.number}</li>`
+        ).join('');
+        creditsDisplay.textContent = `Total Credits: ${filteredCourses.reduce((sum, course) => sum + course.credits, 0)}`;
+    }
+
     // Initial display
-    displayCourses("all");
+    displayCourses();
+
+    // Add click event for filtering
+    courseButtons.addEventListener("click", (e) => {
+        if (e.target.tagName === "BUTTON") {
+            courseButtons.querySelector(".active").classList.remove("active");
+            e.target.classList.add("active");
+            displayCourses(e.target.textContent);
+        }
+    });
 });

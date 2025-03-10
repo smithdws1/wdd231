@@ -1,50 +1,112 @@
-/* Media query for larger screens (desktop layout) */
 @media (min-width: 768px) {
     header {
         justify-content: center;
     }
-
     .hamburger {
-        display: none; /* Hide hamburger on desktop */
+        display: none;
     }
-
     .nav-menu {
-        max-height: none; /* Always visible on desktop */
+        max-height: none;
     }
-
     nav ul {
         flex-direction: row;
         justify-content: center;
         gap: 2rem;
     }
-
     nav li {
         width: auto;
     }
-
     main {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 2rem;
+        padding: 2rem;
         max-width: 1200px;
         margin: 0 auto;
-        padding: 0 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
-
+    h1 {
+        margin-bottom: 2rem;
+    }
+    .wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        width: 100%;
+        max-width: 1200px;
+    }
     .course-work, .highland {
+        flex: 1;
         margin-bottom: 0;
     }
-
-    .certificate {
-        grid-column: 1 / 3;
+    .highland {
+        text-align: center;
     }
-
+    .highland figure {
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .certificate {
+        width: 100%;
+        max-width: calc(100% - 2rem);
+        margin: 2rem auto 0 auto;
+        padding: 0;
+    }
+    .certificate > * {
+        margin: 0;
+        padding: 1.5rem;
+    }
+    .course-buttons {
+        display: flex;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+        justify-content: center;
+        flex-wrap: wrap;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .course-buttons button {
+        padding: 0.75rem 1.5rem;
+        border: 2px solid #001F3F;
+        cursor: pointer;
+        background-color: #001F3F;
+        color: #FFFFFF;
+        border-radius: 5px;
+        font-family: 'Roboto', sans-serif;
+        font-size: 1rem;
+        transition: background-color 0.3s;
+        min-width: 4rem;
+        text-align: center;
+    }
+    .course-buttons button.active {
+        background-color: #A5D6A7;
+    }
+    .course-buttons button:hover {
+        background-color: #81C784;
+    }
+    .course-list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, auto);
+        gap: 1rem;
+        width: 100%;
+        justify-items: stretch;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    .course-list li {
+        text-align: center;
+    }
     section img {
         max-width: 300px;
     }
-
-    /* Ensure consistent spacing on desktop */
     section {
         padding: 2rem;
+    }
+    .flag {
+        font-size: 1.2rem;
+        vertical-align: middle;
+        font-family: 'Segoe UI Emoji', 'Noto Color Emoji', 'EmojiOne', 'Apple Color Emoji', 'Roboto', sans-serif;
     }
 }

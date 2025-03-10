@@ -4,12 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Course homepage of David Smith.">
+    <meta name="description" content="Course homepage of David Smith, showcasing course work and interests.">
     <meta name="author" content="David Smith">
     <title>David Smith - Home</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Roboto&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/small.css">
     <link rel="stylesheet" href="styles/larger.css">
@@ -28,7 +29,6 @@
             <span class="bar"></span>
         </button>
     </header>
-
     <nav class="nav-menu">
         <ul>
             <li><a href="index.html" class="active">Home</a></li>
@@ -37,44 +37,38 @@
             <li><a href="https://www.linkedin.com/in/davidwarrensmith">LinkedIn</a></li>
         </ul>
     </nav>
-
     <main>
         <h1>Home</h1>
-
-        <section class="course-work">
-            <h2>Course Work</h2>
-            <ul>
-                <li>Placeholder for course work item 1</li>
-                <li>Placeholder for course work item 2</li>
-                <li>Placeholder for course work item 3</li>
-            </ul>
-        </section>
-
-        <section class="highland">
-            <h2>Highland, Utah USA</h2>
-            <figure>
-                <img src="images/placeholder.jpg" alt="placeholder" width="300" height="200">
-                <figcaption>Fig Caption Here</figcaption>
-            </figure>
-        </section>
-
+        <div class="wrapper">
+            <section class="course-work">
+                <h2>Course Work</h2>
+                <ul>
+                    <li>Placeholder for course work item 1</li>
+                    <li>Placeholder for course work item 2</li>
+                    <li>Placeholder for course work item 3</li>
+                </ul>
+            </section>
+            <section class="highland">
+                <h2>Highland, Utah USA</h2>
+                <figure>
+                    <img src="images/highlandUtah.jpg" alt="placeholder" width="400" height="300">
+                    <figcaption>Highland, Utah USA</figcaption>
+                </figure>
+            </section>
+        </div>
         <section class="certificate">
             <h2>Web and Computer Programming Certificate</h2>
             <div class="course-buttons">
-                <button class="active">All</button>
-                <button>CSE</button>
-                <button>WDD</button>
             </div>
             <ul class="course-list"></ul>
+            <div id="credits-display">Total Credits: 0</div>
         </section>
     </main>
-
     <footer>
         <p>
             © <span id="currentyear"></span>
             David Smith
-            | USA
-            <span class="flag">🇺🇸</span>
+            | <span id="countryFlag" class="flag">🇺🇸</span>
         </p>
         <p id="lastModified">Last Updated: </p>
     </footer>
