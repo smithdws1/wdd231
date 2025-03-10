@@ -84,16 +84,17 @@ nav a {
     font-size: 1.1rem;
 }
 nav a.active {
-    background-color: #A5D6A7;
+    background-color: #26A69A; /* Replaced #A5D6A7 with teal */
+    color: #212121; /* Retained for contrast */
 }
 nav a:hover {
-    background-color: #81C784;
-    color: #212121;
+    background-color: #00897B; /* Replaced #81C784 with darker teal */
+    color: #FFFFFF; /* Changed to white for higher contrast */
 }
 nav a.active::after {
     content: " (Current Page)";
     font-size: 0.8rem;
-    color: #212121;
+    color: #000000; /* Adjusted to black for sharper contrast */
 }
 main {
     padding: 2rem;
@@ -160,10 +161,12 @@ section figcaption {
     text-align: center;
 }
 .course-buttons button.active {
-    background-color: #A5D6A7;
+    background-color: #26A69A; /* Replaced #A5D6A7 with teal */
+    color: #FFFFFF; /* Adjusted to white for better contrast */
 }
 .course-buttons button:hover {
-    background-color: #81C784;
+    background-color: #00897B; /* Replaced #81C784 with darker teal */
+    color: #FFFFFF; /* Retained white for contrast */
 }
 .course-list {
     list-style: none;
@@ -174,8 +177,8 @@ section figcaption {
 }
 .course-list li {
     padding: 0.5rem 1rem;
-    border: 2px solid #A5D6A7;
-    background-color: #A5D6A7;
+    border: 2px solid #26A69A; /* Updated border to match new teal */
+    background-color: #26A69A; /* Replaced #A5D6A7 with teal */
     color: #212121;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -190,10 +193,12 @@ section figcaption {
 }
 .course-list li:hover {
     transform: scale(1.02);
-    background-color: #81C784;
+    background-color: #00897B; /* Replaced #81C784 with darker teal */
+    color: #FFFFFF; /* Changed to white for higher contrast */
 }
 .course-list li.completed:hover {
-    background-color: #2E3A3B;
+    background-color: #003087; /* Updated to brighter navy for contrast (from earlier suggestion) */
+    color: #FFFFFF;
 }
 #credits-display {
     text-align: center;
