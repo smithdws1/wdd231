@@ -84,7 +84,7 @@ nav a {
     font-size: 1.1rem;
 }
 nav a.active {
-    background-color: #0288D1;
+    background-color: #0267A4;
     color: #FFFFFF;
 }
 nav a:hover {
@@ -165,7 +165,7 @@ section figcaption {
     color: #FFFFFF;
 }
 .course-buttons button.active {
-    background-color: #0288D1;
+    background-color: #0267A4;
     color: #FFFFFF;
 }
 .course-list {
@@ -177,8 +177,8 @@ section figcaption {
 }
 .course-list li {
     padding: 0.5rem 1rem;
-    border: 2px solid #0288D1;
-    background-color: #0288D1;
+    border: 2px solid #0267A4;
+    background-color: #0267A4;
     color: #FFFFFF;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);

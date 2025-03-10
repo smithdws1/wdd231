@@ -16,6 +16,11 @@
     nav li {
         width: auto;
     }
+    nav a.active::after {
+        content: " (Current Page)";
+        font-size: 0.8rem;
+        color: #000000;
+    }
     main {
         padding: 2rem;
         max-width: 1200px;
@@ -80,7 +85,7 @@
         text-align: center;
     }
     .course-buttons button.active {
-        background-color: #0288D1;
+        background-color: #0267A4;
         color: #FFFFFF;
     }
     .course-buttons button:hover {
