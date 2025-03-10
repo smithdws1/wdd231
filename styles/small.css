@@ -84,17 +84,17 @@ nav a {
     font-size: 1.1rem;
 }
 nav a.active {
-    background-color: #26A69A; /* Replaced #A5D6A7 with teal */
-    color: #212121; /* Retained for contrast */
+    background-color: #0288D1;
+    color: #FFFFFF;
 }
 nav a:hover {
-    background-color: #00897B; /* Replaced #81C784 with darker teal */
-    color: #FFFFFF; /* Changed to white for higher contrast */
+    background-color: #01579B;
+    color: #FFFFFF;
 }
 nav a.active::after {
     content: " (Current Page)";
     font-size: 0.8rem;
-    color: #000000; /* Adjusted to black for sharper contrast */
+    color: #000000;
 }
 main {
     padding: 2rem;
@@ -160,13 +160,13 @@ section figcaption {
     min-width: 4rem;
     text-align: center;
 }
-.course-buttons button.active {
-    background-color: #26A69A; /* Replaced #A5D6A7 with teal */
-    color: #FFFFFF; /* Adjusted to white for better contrast */
-}
 .course-buttons button:hover {
-    background-color: #00897B; /* Replaced #81C784 with darker teal */
-    color: #FFFFFF; /* Retained white for contrast */
+    background-color: #01579B;
+    color: #FFFFFF;
+}
+.course-buttons button.active {
+    background-color: #0288D1;
+    color: #FFFFFF;
 }
 .course-list {
     list-style: none;
@@ -177,9 +177,9 @@ section figcaption {
 }
 .course-list li {
     padding: 0.5rem 1rem;
-    border: 2px solid #26A69A; /* Updated border to match new teal */
-    background-color: #26A69A; /* Replaced #A5D6A7 with teal */
-    color: #212121;
+    border: 2px solid #0288D1;
+    background-color: #0288D1;
+    color: #FFFFFF;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s, background-color 0.3s;
@@ -193,11 +193,11 @@ section figcaption {
 }
 .course-list li:hover {
     transform: scale(1.02);
-    background-color: #00897B; /* Replaced #81C784 with darker teal */
-    color: #FFFFFF; /* Changed to white for higher contrast */
+    background-color: #01579B;
+    color: #FFFFFF;
 }
 .course-list li.completed:hover {
-    background-color: #003087; /* Updated to brighter navy for contrast (from earlier suggestion) */
+    background-color: #003087;
     color: #FFFFFF;
 }
 #credits-display {
