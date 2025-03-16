@@ -1,64 +1,64 @@
 [
     {
-        "name": "Highland Bakery",
-        "address": "123 Main St, Highland, UT 84003",
-        "phone": "(801) 555-0101",
-        "website": "https://highlandbakery.com",
-        "image": "bakery.jpg",
+        "name": "Baked by Bexley",
+        "address": "11992 N Ithica Dr, Highland, UT 84003",
+        "phone": "(801) 717-7245",
+        "website": "https://www.instagram.com/bakedinbexley",
+        "image": "images/bakedByBexley.png",
         "membershipLevel": 3,
-        "description": "A family-owned bakery offering fresh bread and pastries."
+        "description": "Custom cakes, cookies, and cupcakes for any occasion"
     },
     {
-        "name": "Tech Solutions Inc.",
-        "address": "456 Tech Rd, Highland, UT 84003",
-        "phone": "(801) 555-0102",
-        "website": "https://techsolutions.com",
-        "image": "tech.jpg",
+        "name": "Clicked Creations",
+        "address": "10939 N Alpine Blvd #610, Highland, UT 84003",
+        "phone": "(801) 600-9552",
+        "website": "https://www.clickedcreations.com/",
+        "image": "images/clickedCreations.png",
         "membershipLevel": 2,
-        "description": "Providing IT services and support for local businesses."
+        "description": "We create tailored strategies, expert execution, and cutting-edge tools to accelerate your success."
     },
     {
-        "name": "Green Thumb Nursery",
-        "address": "789 Garden Ln, Highland, UT 84003",
-        "phone": "(801) 555-0103",
-        "website": "https://greenthumbnursery.com",
-        "image": "nursery.jpg",
+        "name": "Highland Gardens",
+        "address": "9736 N 4800 W, American Fork, UT 84003",
+        "phone": "(385) 455-9866",
+        "website": "http://www.hgardens.com/",
+        "image": "images/highlandGardens.png",
         "membershipLevel": 1,
         "description": "Your local source for plants, flowers, and gardening supplies."
     },
     {
-        "name": "Highland Fitness Center",
-        "address": "1010 Fitness Way, Highland, UT 84003",
-        "phone": "(801) 555-0104",
-        "website": "https://highlandfitness.com",
-        "image": "fitness.jpg",
+        "name": "HOTWORX",
+        "address": "10945 Alpine Hwy, Highland, UT 84003",
+        "phone": "(385) 387-1427",
+        "website": "https://www.hotworx.net/studio/highland-alpine",
+        "image": "images/hotwork.png",
         "membershipLevel": 3,
-        "description": "A gym with state-of-the-art equipment and classes."
+        "description": "HOTWORX is a virtually instructed exercise program created for users to experience the many benefits of infrared heat absorption."
     },
     {
-        "name": "Smith Family Dentistry",
-        "address": "1212 Dental Dr, Highland, UT 84003",
-        "phone": "(801) 555-0105",
-        "website": "https://smithdentistry.com",
-        "image": "dentistry.jpg",
+        "name": "Alcorn Family Dentistry",
+        "address": "5455 W 11000 N, Highland, UT 84003",
+        "phone": "(801) 492-0055",
+        "website": "http://www.alcornfamilydentistry.com/",
+        "image": "images/alcorn.jpg",
         "membershipLevel": 2,
-        "description": "Quality dental care for the whole family."
+        "description": "Family and Cosmetic Dentistry"
     },
     {
-        "name": "Highland Auto Repair",
-        "address": "1313 Auto Ave, Highland, UT 84003",
+        "name": "Burt Brothers Tire & Service",
+        "address": "10918 Town Center Blvd, Highland, UT 84003",
         "phone": "(801) 555-0106",
-        "website": "https://highlandautorepair.com",
-        "image": "autorepair.jpg",
+        "website": "https://burtbrothers.com/locations/highland/",
+        "image": "images/burtBrosTire.jpg",
         "membershipLevel": 1,
-        "description": "Reliable auto repair services at affordable prices."
+        "description": "providing great tires, outstanding auto repair & services with state-of-the-art equipment for all vehicles is what we do."
     },
     {
-        "name": "Mountain View Real Estate",
-        "address": "1414 Realty Rd, Highland, UT 84003",
-        "phone": "(801) 555-0107",
-        "website": "https://mountainviewrealestate.com",
-        "image": "realestate.jpg",
+        "name": "Millennial Enterprises Corp",
+        "address": "9629 N 5650 W, Highland, UT 84003",
+        "phone": "(801) 735-9402",
+        "website": "http://www.houseagentutah.com/",
+        "image": "images/mec.png",
         "membershipLevel": 3,
         "description": "Helping you find your dream home in Highland."
     }
