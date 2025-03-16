@@ -1,0 +1,65 @@
+[
+    {
+        "name": "Highland Bakery",
+        "address": "123 Main St, Highland, UT 84003",
+        "phone": "(801) 555-0101",
+        "website": "https://highlandbakery.com",
+        "image": "bakery.jpg",
+        "membershipLevel": 3,
+        "description": "A family-owned bakery offering fresh bread and pastries."
+    },
+    {
+        "name": "Tech Solutions Inc.",
+        "address": "456 Tech Rd, Highland, UT 84003",
+        "phone": "(801) 555-0102",
+        "website": "https://techsolutions.com",
+        "image": "tech.jpg",
+        "membershipLevel": 2,
+        "description": "Providing IT services and support for local businesses."
+    },
+    {
+        "name": "Green Thumb Nursery",
+        "address": "789 Garden Ln, Highland, UT 84003",
+        "phone": "(801) 555-0103",
+        "website": "https://greenthumbnursery.com",
+        "image": "nursery.jpg",
+        "membershipLevel": 1,
+        "description": "Your local source for plants, flowers, and gardening supplies."
+    },
+    {
+        "name": "Highland Fitness Center",
+        "address": "1010 Fitness Way, Highland, UT 84003",
+        "phone": "(801) 555-0104",
+        "website": "https://highlandfitness.com",
+        "image": "fitness.jpg",
+        "membershipLevel": 3,
+        "description": "A gym with state-of-the-art equipment and classes."
+    },
+    {
+        "name": "Smith Family Dentistry",
+        "address": "1212 Dental Dr, Highland, UT 84003",
+        "phone": "(801) 555-0105",
+        "website": "https://smithdentistry.com",
+        "image": "dentistry.jpg",
+        "membershipLevel": 2,
+        "description": "Quality dental care for the whole family."
+    },
+    {
+        "name": "Highland Auto Repair",
+        "address": "1313 Auto Ave, Highland, UT 84003",
+        "phone": "(801) 555-0106",
+        "website": "https://highlandautorepair.com",
+        "image": "autorepair.jpg",
+        "membershipLevel": 1,
+        "description": "Reliable auto repair services at affordable prices."
+    },
+    {
+        "name": "Mountain View Real Estate",
+        "address": "1414 Realty Rd, Highland, UT 84003",
+        "phone": "(801) 555-0107",
+        "website": "https://mountainviewrealestate.com",
+        "image": "realestate.jpg",
+        "membershipLevel": 3,
+        "description": "Helping you find your dream home in Highland."
+    }
+]
