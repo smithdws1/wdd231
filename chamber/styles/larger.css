@@ -1,4 +1,4 @@
-/* Larger screens (above 320px) */
+/* Screen > 320px */
 @media (min-width: 321px) {
     header {
         padding: 1rem;
@@ -33,12 +33,12 @@
         padding: 0.5rem 1rem;
     }
 
-    /* Hero Section */
+    /* Hero */
     .hero img {
         max-height: 400px;
     }
 
-    /* Main Content */
+    /* Main */
     main {
         max-width: 1200px;
         margin: 2rem auto;
@@ -88,11 +88,11 @@
         width: 100%;
         height: 100%;
         object-fit: contain;
-        filter: brightness(0) invert(1); /* Makes the SVG white */
+        filter: brightness(0) invert(1);
     }
 }
 
-/* Desktop-specific adjustments (768px and above) */
+/* Desktop 768px and up */
 @media (min-width: 768px) {
     header h1 {
         font-size: 3rem;
