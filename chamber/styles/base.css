@@ -23,7 +23,7 @@ nav {
     margin-top: 0.5rem;
 }
 
-/* Hamburger menu button */
+/* Hamburger menu */
 #menu-toggle {
     display: block;
     background: none;
@@ -244,9 +244,11 @@ footer .social-icons a:hover {
     background-color: #B0BEC5;
 }
 
-footer .social-icons a i {
-    font-size: 1rem;
-    color: white;
+footer .social-icons a img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
 }
 
 /* Mobile Media */
@@ -283,7 +285,8 @@ footer .social-icons a i {
         height: 1.5rem;
     }
 
-    footer .social-icons a i {
-        font-size: 0.8rem;
+    footer .social-icons a img {
+        width: 100%;
+        height: 100%;
     }
 }
