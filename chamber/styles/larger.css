@@ -1,0 +1,122 @@
+/* Larger screens above 320px */
+@media (min-width: 321px) {
+    header {
+        padding: 1rem;
+    }
+
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+    footer {
+        padding: 1rem;
+    }
+
+    /* Navigation */
+    nav {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    #menu-toggle {
+        display: none;
+    }
+
+    #nav-menu {
+        display: flex;
+        flex-direction: row;
+        text-align: center;
+        margin: 0;
+    }
+
+    #nav-menu li a {
+        padding: 0.5rem 1rem;
+    }
+
+    /* Hero */
+    .hero img {
+        max-height: 400px;
+    }
+
+    /* Main */
+    main {
+        max-width: 1200px;
+        margin: 2rem auto;
+        padding: 0 1rem;
+    }
+
+    .view-toggle {
+        text-align: right;
+    }
+
+    /* Grid View */
+    #member-container.grid-view {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1rem;
+    }
+
+    #member-container.grid-view .member-card {
+        padding: 1rem;
+    }
+
+    /* Footer */
+    footer .footer-contact p,
+    footer .footer-info p {
+        margin: 0.1rem 0;
+    }
+
+    footer .footer-info img {
+        vertical-align: middle;
+        width: 20px;
+    }
+
+    footer .social-icons {
+        gap: 1.5rem;
+    }
+
+    footer p {
+        font-size: 1rem;
+    }
+
+    footer .social-icons a {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+
+    footer .social-icons a i {
+        font-size: 1.5rem;
+    }
+}
+
+/* Desktop 768px and up */
+@media (min-width: 768px) {
+    header h1 {
+        font-size: 3rem;
+    }
+
+    .hero img {
+        max-height: 500px;
+    }
+
+    #member-container.grid-view .member-card {
+        padding: 1.5rem;
+    }
+
+    #member-container.grid-view .member-card h3 {
+        font-size: 1.4rem;
+    }
+
+    #member-container.grid-view .member-card p {
+        font-size: 1rem;
+    }
+
+    footer .social-icons a {
+        width: 3rem;
+        height: 3rem;
+    }
+
+    footer .social-icons a i {
+        font-size: 1.8rem;
+    }
+}

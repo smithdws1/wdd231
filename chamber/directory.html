@@ -4,26 +4,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Chamber Directory page of David Smith, showcasing my course work.">
+    <meta name="description" content="Highland Chamber of Commerce Directory - A directory of local businesses in Highland, Utah, created by David Smith for WDD 231.">
     <meta name="author" content="David Smith">
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="David Smith - Directory Page">
+    <meta property="og:title" content="Highland Chamber of Commerce - Directory">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="https://smithdws1.github.io/wdd231/images/highlandUtah.jpg">
+    <meta property="og:image" content="https://smithdws1.github.io/wdd231/chamber/images/hero.jpg">
     <meta property="og:url" content="https://smithdws1.github.io/wdd231/chamber/directory.html">
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="David Smith - Directory Page">
-    <meta name="twitter:description" content="Chamber Directory page of David Smith, showcasing my course work.">
-    <meta name="twitter:image" content="https://smithdws1.github.io/wdd231/images/highlandUtah.jpg">
+    <meta name="twitter:title" content="Highland Chamber of Commerce - Directory">
+    <meta name="twitter:description" content="Highland Chamber of Commerce Directory - A directory of local businesses in Highland, Utah, created by David Smith for WDD 231.">
+    <meta name="twitter:image" content="https://smithdws1.github.io/wdd231/chamber/images/hero.jpg">
     <title>Highland Chamber of Commerce - Directory</title>
     <link rel="icon" href="images/favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Roboto&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/larger.css">
     <script defer src="scripts/date.js"></script>
     <script defer src="scripts/directory.js"></script>
 </head>
@@ -32,32 +33,54 @@
     <header>
         <h1>Highland Chamber of Commerce</h1>
         <nav>
-            <button id="menu-toggle">☰</button>
+            <button id="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
             <ul id="nav-menu">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="directory.html" class="active">Directory</a></li>
+                <li><a href="discover.html">Discover</a></li>
+                <li><a href="directory.html" class="active">Business Directory</a></li>
                 <li><a href="join.html">Join</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="events.html">Events</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <h2>Member Directory</h2>
+        <section class="hero">
+            <img src="images/hero.jpg" alt="Scenic view of Highland, Utah" loading="lazy">
+        </section>
+        <h2>Business Directory</h2>
         <div class="view-toggle">
             <button id="grid-view" class="active">Grid</button>
             <button id="list-view">List</button>
         </div>
-        <section id="member-container" class="grid-view"></section>
+        <section id="member-container" class="grid-view" aria-live="polite"></section>
     </main>
 
     <footer>
-        <p>
-            &copy; <span id="currentyear"></span> Highland Chamber of Commerce | David Smith | WDD 231
-            | <img src="images/Emojione_1F1FA-1F1F8.svg.png" alt="US Flag" class="flag">
-        </p>
-        <p>Contact: 1234 Highland Ave, Highland, UT 84003 | (801) 555-1234 | info@highlandchamber.org</p>
-        <p id="lastModified">Last Updated: </p>
+        <div class="footer-contact">
+            <address>
+                <p>Highland Chamber of Commerce</p>
+                <p>1234 Highland Ave</p>
+                <p>Highland, UT 84003</p>
+                <p>info@highlandchamber.org</p>
+                <p>(801) 555-2300</p>
+            </address>
+        </div>
+        <div class="social-icons">
+            <a href="https://youtube.com" target="_blank" rel="noopener" aria-label="Visit our YouTube page"><i class="fab fa-youtube"></i></a>
+            <a href="https://twitter.com" target="_blank" rel="noopener" aria-label="Visit our Twitter page"><i class="fab fa-twitter"></i></a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="Visit our LinkedIn page"><i class="fab fa-linkedin"></i></a>
+        </div>
+        <div class="footer-info">
+            <address>
+                <p>© <span id="currentyear"></span> Highland Chamber of Commerce</p>
+                <p>David Smith</p>
+                <p>WDD 231</p>
+                <p><img src="images/Emojione_1F1FA-1F1F8.svg.png" alt="US Flag"></p>
+                <p id="lastModified">Last Updated: </p>
+            </address>
+        </div>
     </footer>
 </body>
 
