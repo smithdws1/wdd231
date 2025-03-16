@@ -4,7 +4,7 @@
         "address": "11992 N Ithica Dr, Highland, UT 84003",
         "phone": "(801) 717-7245",
         "website": "https://www.instagram.com/bakedinbexley",
-        "image": "images/bakedByBexley.png",
+        "image": "images/bakedByBexley.jpg",
         "membershipLevel": 3,
         "description": "Custom cakes, cookies, and cupcakes for any occasion"
     },
@@ -22,7 +22,7 @@
         "address": "9736 N 4800 W, American Fork, UT 84003",
         "phone": "(385) 455-9866",
         "website": "http://www.hgardens.com/",
-        "image": "images/highlandGardens.png",
+        "image": "images/highlandGardens.jpg",
         "membershipLevel": 1,
         "description": "Your local source for plants, flowers, and gardening supplies."
     },
