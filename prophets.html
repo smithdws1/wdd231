@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latter-day Prophets - David Smith</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        #filters {
+            margin: 20px;
+        }
+
+        button {
+            margin: 5px;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        #cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        section {
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+    <script defer src="scripts/prophets.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>Latter-day Prophets</h1>
+    </header>
+    <main>
+        <div id="filters">
+            <button id="utahBorn">Born in Utah</button>
+            <button id="outsideUS">Born Outside US</button>
+            <button id="lived95Plus">Lived 95+ Years</button>
+            <button id="tenPlusChildren">10+ Children</button>
+            <button id="served15Plus">Served 15+ Years</button>
+            <button id="reset">Show All</button>
+        </div>
+        <div id="cards"></div>
+    </main>
+</body>
+
+</html>
