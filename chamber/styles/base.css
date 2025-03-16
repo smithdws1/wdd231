@@ -55,7 +55,7 @@ nav {
 }
 
 #nav-menu li a:hover, #nav-menu li a.active {
-    background-color: #B0BEC5;
+    background-color: #455A64;
     border-radius: 5px;
 }
 
@@ -85,7 +85,7 @@ main {
 .view-toggle button {
     padding: 0.5rem 1rem;
     border: none;
-    background-color: #B0BEC5;
+    background-color: #455A64;
     color: white;
     cursor: pointer;
     border-radius: 5px;
