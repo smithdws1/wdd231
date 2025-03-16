@@ -4,7 +4,7 @@
         "address": "11992 N Ithica Dr, Highland, UT 84003",
         "phone": "(801) 717-7245",
         "website": "https://www.instagram.com/bakedinbexley",
-        "image": "images/bakedByBexley.jpg",
+        "image": "images/bakedByBexley.webp",
         "membershipLevel": 3,
         "description": "Custom cakes, cookies, and cupcakes for any occasion"
     },
@@ -13,7 +13,7 @@
         "address": "10939 N Alpine Blvd #610, Highland, UT 84003",
         "phone": "(801) 600-9552",
         "website": "https://www.clickedcreations.com/",
-        "image": "images/clickedCreations.png",
+        "image": "images/clickedCreations.webp",
         "membershipLevel": 2,
         "description": "We create tailored strategies, expert execution, and cutting-edge tools to accelerate your success."
     },
@@ -31,7 +31,7 @@
         "address": "10945 Alpine Hwy, Highland, UT 84003",
         "phone": "(385) 387-1427",
         "website": "https://www.hotworx.net/studio/highland-alpine",
-        "image": "images/hotworx.jpg",
+        "image": "images/hotworx.webp",
         "membershipLevel": 3,
         "description": "HOTWORX is a virtually instructed exercise program created for users to experience the many benefits of infrared heat absorption."
     },
