@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Fake Highland Chamber of Commerce Directory - A directory of local businesses in Highland, Utah, created by David Smith for WDD231.">
+    <meta name="description"
+        content="Fake Highland Chamber of Commerce Directory - A directory of local businesses in Highland, Utah, created by David Smith for WDD231.">
     <meta name="author" content="David Smith">
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="Fake Highland Chamber of Commerce - Directory">
@@ -14,16 +15,18 @@
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Fake Highland Chamber of Commerce - Directory">
-    <meta name="twitter:description" content="Fake Highland Chamber of Commerce Directory - A directory of local businesses in Highland, Utah, created by David Smith for WDD231.">
+    <meta name="twitter:description"
+        content="Fake Highland Chamber of Commerce Directory - A directory of local businesses in Highland, Utah, created by David Smith for WDD231.">
     <meta name="twitter:image" content="https://smithdws1.github.io/wdd231/chamber/images/hero.jpg">
     <title>Fake Highland Chamber of Commerce - Directory</title>
     <link rel="icon" href="images/favicon.ico">
-    <link rel="preload" href="https://fonts.googleapis.com">
-    <link rel="preload" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Roboto&display=swap"
+        as="style">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Roboto&display=swap">
     <link rel="stylesheet" href="styles/normalize.css">
-    <link rel="stylesheet" href="styles/base.css" defer>
-    <link rel="stylesheet" href="styles/larger.css" defer>
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/larger.css">
     <script defer src="scripts/date.js"></script>
     <script defer src="scripts/directory.js"></script>
 </head>
@@ -62,7 +65,25 @@
                 <p>1234 Highland Ave</p>
                 <p>Highland, UT 84003</p>
                 <p>info@highlandchamber.org</p>
-                <p>(801) 555-2300</p>
+                <p>(801) 555-2300</p><footer>
+                    <div class="footer-contact">
+                        <address>
+                            <p>Fake Highland Chamber of Commerce</p>
+                            <p>1234 Highland Ave</p>
+                            <p>Highland, UT 84003</p>
+                            <p>info@highlandchamber.org</p>
+                            <p>(801) 555-2300</p>
+                        </address>
+                    </div>
+                    <div class="social-icons">...</div>
+                    <div class="footer-info">
+                        <p>© <span id="currentyear"></span> Fake Highland Chamber of Commerce</p>
+                        <p>David Smith</p>
+                        <p>WDD231</p>
+                        <img src="images/Emojione_1F1FA-1F1F8.svg.png" alt="US Flag" class="flag-icon">
+                        <p id="lastModified">Last Updated: </p>
+                    </div>
+                </footer>
             </address>
         </div>
         <div class="social-icons">
