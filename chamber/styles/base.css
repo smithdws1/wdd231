@@ -19,6 +19,19 @@ header {
     padding: 0.5rem;
 }
 
+.header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.site-title {
+    font-family: 'Merriweather', serif;
+    font-size: 1.5rem;
+    color: white;
+    margin: 0.5rem 0;
+}
+
 nav {
     margin-top: 0.5rem;
 }
@@ -62,6 +75,7 @@ nav {
 .hero {
     width: 100%;
     margin-bottom: 1rem;
+    position: relative;
 }
 
 .hero img {
@@ -70,6 +84,29 @@ nav {
     max-height: 200px;
     object-fit: cover;
     display: block;
+}
+
+/* Call to Action Button Appearance */
+.cta-button {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: #2E7D32;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #455A64;
+}
+
+/* Call to Action Button Positioning */
+.cta-button-position {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
 }
 
 main {
@@ -173,6 +210,153 @@ main {
 }
 
 #member-container.list-view .member-card a:hover {
+    text-decoration: underline;
+}
+
+.info-row {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.weather-wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+/* Events Section */
+.events {
+    margin-bottom: 1rem;
+    width: 100%;
+}
+
+.event-card {
+    background-color: white;
+    border: 2px solid #B0BEC5;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1rem;
+}
+
+.event-card h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.2rem;
+    color: #2E7D32;
+}
+
+.event-card p {
+    margin: 0.3rem 0;
+    color: #263238;
+}
+
+/* Current Weather Section */
+.current-weather {
+    margin-bottom: 1rem;
+    width: 100%;
+}
+
+#current-weather {
+    background-color: white;
+    border: 2px solid #B0BEC5;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1rem;
+}
+
+#current-weather h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.2rem;
+    color: #2E7D32;
+}
+
+#current-weather p {
+    margin: 0.3rem 0;
+    color: #263238;
+}
+
+/* Forecast Section */
+.forecast {
+    margin-bottom: 1rem;
+    width: 100%;
+}
+
+#forecast {
+    background-color: white;
+    border: 2px solid #B0BEC5;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1rem;
+}
+
+#forecast h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.2rem;
+    color: #2E7D32;
+}
+
+#forecast-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.forecast-day {
+    padding: 0.5rem;
+    border-top: 1px solid #B0BEC5;
+    text-align: center;
+}
+
+.forecast-day:first-child {
+    border-top: none;
+}
+
+/* Spotlights Section */
+.spotlights {
+    margin-bottom: 1rem;
+}
+
+#spotlight-container.grid-view {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+}
+
+#spotlight-container.grid-view .spotlight-card {
+    background-color: white;
+    border: 2px solid #B0BEC5;
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#spotlight-container.grid-view .spotlight-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+#spotlight-container.grid-view .spotlight-card h3 {
+    margin: 0.5rem 0;
+    font-size: 1.2rem;
+    color: #2E7D32;
+}
+
+#spotlight-container.grid-view .spotlight-card p {
+    margin: 0.3rem 0;
+    color: #263238;
+}
+
+#spotlight-container.grid-view .spotlight-card a {
+    color: #2E7D32;
+    text-decoration: none;
+}
+
+#spotlight-container.grid-view .spotlight-card a:hover {
     text-decoration: underline;
 }
 
@@ -288,5 +472,32 @@ footer .social-icons a img {
     footer .social-icons a img {
         width: 80%;
         height: 80%;
+    }
+
+    /* Stack all sections vertically on mobile */
+    .info-row {
+        flex-direction: column;
+    }
+
+    .weather-wrapper {
+        flex-direction: column;
+    }
+
+    .events, .current-weather, .forecast {
+        width: 100%;
+        max-width: none;
+    }
+
+    #forecast-container {
+        flex-direction: column;
+    }
+
+    .forecast-day {
+        border-left: none;
+        border-top: 1px solid #B0BEC5;
+    }
+
+    .forecast-day:first-child {
+        border-top: none;
     }
 }

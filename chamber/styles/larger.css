@@ -3,8 +3,14 @@
         padding: 1rem;
     }
 
-    header h1 {
-        font-size: 2.5rem;
+    .header-content {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .site-title {
+        font-size: 2rem;
     }
 
     footer {
@@ -47,6 +53,10 @@
         max-width: 1200px;
         margin: 2rem auto;
         padding: 0 1rem;
+    }
+
+    main:not(:has(.hero)) {
+        margin-top: 1rem;
     }
 
     .view-toggle {
@@ -97,6 +107,73 @@
         object-fit: contain;
         filter: brightness(0) invert(1);
     }
+
+    /* Home Page Styles */
+    .info-row {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+    }
+
+    .events {
+        flex: 2;
+        width: 50%;
+        margin: 0;
+    }
+
+    .weather-wrapper {
+        flex: 2;
+        width: 50%;
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+    }
+
+    .current-weather {
+        flex: 1;
+        width: 50%;
+        margin: 0;
+    }
+
+    .forecast {
+        flex: 1;
+        width: 50%;
+        margin: 0;
+    }
+
+    #current-weather, #forecast {
+        margin-bottom: 0;
+    }
+
+    #forecast-container {
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .forecast-day {
+        border-top: 1px solid #B0BEC5;
+        border-left: none;
+        padding: 0.5rem;
+    }
+
+    .forecast-day:first-child {
+        border-top: none;
+    }
+
+    .spotlights {
+        max-width: 1200px;
+        margin: 2rem auto;
+    }
+
+    #spotlight-container.grid-view {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1rem;
+    }
+
+    #spotlight-container.grid-view .spotlight-card {
+        padding: 1rem;
+    }
 }
 
 @media (min-width: 768px) {
@@ -141,5 +218,30 @@
 
     .view-toggle button.active {
         background-color: #2E7D32;
+    }
+
+    /* Home Page Styles */
+    .event-card h3 {
+        font-size: 1.4rem;
+    }
+
+    .event-card p {
+        font-size: 1rem;
+    }
+
+    #current-weather h3, #forecast h3 {
+        font-size: 1.4rem;
+    }
+
+    #current-weather p, #forecast p {
+        font-size: 1rem;
+    }
+
+    #spotlight-container.grid-view .spotlight-card h3 {
+        font-size: 1.4rem;
+    }
+
+    #spotlight-container.grid-view .spotlight-card p {
+        font-size: 1rem;
     }
 }

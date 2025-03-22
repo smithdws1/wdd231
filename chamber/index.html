@@ -5,20 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Fake Highland Chamber of Commerce Directory - A directory of local businesses in Highland, Utah, created by David Smith for WDD231.">
+        content="Fake Highland Chamber of Commerce - Home page for the chamber in Highland, Utah, created by David Smith for WDD231.">
     <meta name="author" content="David Smith">
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Fake Highland Chamber of Commerce - Directory">
+    <meta property="og:title" content="Fake Highland Chamber of Commerce - Home">
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://smithdws1.github.io/wdd231/chamber/images/hero.jpg">
-    <meta property="og:url" content="https://smithdws1.github.io/wdd231/chamber/directory.html">
+    <meta property="og:url" content="https://smithdws1.github.io/wdd231/chamber/index.html">
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Fake Highland Chamber of Commerce - Directory">
+    <meta name="twitter:title" content="Fake Highland Chamber of Commerce - Home">
     <meta name="twitter:description"
-        content="Fake Highland Chamber of Commerce Directory - A directory of local businesses in Highland, Utah, created by David Smith for WDD231.">
+        content="Fake Highland Chamber of Commerce - Home page for the chamber in Highland, Utah, created by David Smith for WDD231.">
     <meta name="twitter:image" content="https://smithdws1.github.io/wdd231/chamber/images/hero.jpg">
-    <title>Fake Highland Chamber of Commerce - Directory</title>
+    <title>Fake Highland Chamber of Commerce - Home</title>
     <link rel="icon" href="images/favicon.ico">
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Roboto&display=swap"
         as="style">
@@ -28,7 +28,9 @@
     <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/larger.css">
     <script defer src="scripts/date.js"></script>
-    <script defer src="scripts/directory.js"></script>
+    <script defer src="scripts/currentWeather.js"></script>
+    <script defer src="scripts/weatherForecast.js"></script>
+    <script defer src="scripts/home.js"></script>
 </head>
 
 <body>
@@ -36,7 +38,7 @@
         <nav>
             <button id="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
             <ul id="nav-menu">
-                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="directory.html">Business Directory</a></li>
                 <li><a href="discover.html">Discover</a></li>
                 <li><a href="join.html">Join</a></li>
@@ -47,13 +49,49 @@
     </header>
 
     <main>
-        <h1>Fake Highland Chamber of Commerce - Directory</h1>
-        <h2>Business Directory</h2>
-        <div class="view-toggle">
-            <button id="grid-view" class="active">Grid</button>
-            <button id="list-view">List</button>
+        <h1>Fake Highland Chamber of Commerce</h1>
+        <section class="hero">
+            <img src="images/hero.jpg" alt="Scenic view of Highland, Utah" loading="lazy">
+            <a href="join.html" class="cta-button cta-button-position">Join the Chamber</a>
+        </section>
+        
+        <div class="info-row">
+            <section class="events">
+                <h2>Current Events</h2>
+                <div class="event-card">
+                    <h3>Annual Business Expo</h3>
+                    <p><strong>Date:</strong> April 15, 2025</p>
+                    <p><strong>Location:</strong> Highland Community Center</p>
+                    <p>Join us for our annual expo featuring local businesses, networking opportunities, and workshops.</p>
+                </div>
+            </section>
+    
+            <section class="current-weather">
+                <h2>Weather in Highland, UT</h2>
+                <div id="current-weather">
+                    <h3>Current Conditions</h3>
+                    <p><strong>Temperature:</strong> <span id="current-temp"></span>°F</p>
+                    <p><strong>High:</strong> <span id="current-high"></span>°F</p>
+                    <p><strong>Low:</strong> <span id="current-low"></span>°F</p>
+                    <p><strong>Humidity:</strong> <span id="current-humidity"></span>%</p>
+                    <p><strong>Sunrise:</strong> <span id="current-sunrise"></span></p>
+                    <p><strong>Sunset:</strong> <span id="current-sunset"></span></p>
+                    <p><strong>Description:</strong> <span id="weather-desc"></span></p>
+                </div>
+            </section>
+    
+            <section class="forecast">
+                <h2>3-Day Forecast</h2>
+                <div id="forecast">
+                    <div id="forecast-container"></div>
+                </div>
+            </section>
         </div>
-        <section id="member-container" class="grid-view" aria-live="polite"></section>
+    
+        <section class="spotlights">
+            <h2>Member Spotlights</h2>
+            <div id="spotlight-container" class="grid-view" aria-live="polite"></div>
+        </section>
     </main>
 
     <footer>
