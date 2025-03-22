@@ -1,4 +1,6 @@
+/* Media Query: min-width 321px */
 @media (min-width: 321px) {
+    /* Header */
     header {
         padding: 1rem;
     }
@@ -13,10 +15,7 @@
         font-size: 2rem;
     }
 
-    footer {
-        padding: 0.5rem;
-    }
-
+    /* Navigation */
     nav {
         display: flex;
         justify-content: flex-end;
@@ -45,10 +44,12 @@
         border-radius: 5px;
     }
 
+    /* Hero */
     .hero img {
         max-height: 400px;
     }
 
+    /* Main Content */
     main {
         max-width: 1200px;
         margin: 2rem auto;
@@ -59,6 +60,7 @@
         margin-top: 1rem;
     }
 
+    /* Business Directory */
     .view-toggle {
         text-align: right;
     }
@@ -71,6 +73,70 @@
 
     #member-container.grid-view .member-card {
         padding: 1rem;
+    }
+
+    /* Home Page */
+    .info-row {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+    }
+
+    .events {
+        flex: 2;
+        margin: 0;
+    }
+
+    .weather-wrapper {
+        flex: 2;
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+    }
+
+    .current-weather {
+        flex: 1;
+        margin: 0;
+    }
+
+    .forecast {
+        flex: 1;
+        margin: 0;
+    }
+
+    #forecast-container {
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .forecast-day {
+        border-top: 1px solid #B0BEC5;
+        border-left: none;
+        padding: 0.5rem;
+    }
+
+    .forecast-day:first-child {
+        border-top: none;
+    }
+
+    .spotlights {
+        max-width: 1200px;
+        margin: 2rem auto;
+    }
+
+    #spotlight-container.grid-view {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1rem;
+    }
+
+    #spotlight-container.grid-view .spotlight-card {
+        padding: 1rem;
+    }
+
+    /* Footer */
+    footer {
+        padding: 0.5rem;
     }
 
     footer .footer-contact p,
@@ -107,84 +173,21 @@
         object-fit: contain;
         filter: brightness(0) invert(1);
     }
-
-    /* Home Page Styles */
-    .info-row {
-        display: flex;
-        flex-direction: row;
-        gap: 1rem;
-    }
-
-    .events {
-        flex: 2;
-        width: 50%;
-        margin: 0;
-    }
-
-    .weather-wrapper {
-        flex: 2;
-        width: 50%;
-        display: flex;
-        flex-direction: row;
-        gap: 1rem;
-    }
-
-    .current-weather {
-        flex: 1;
-        width: 50%;
-        margin: 0;
-    }
-
-    .forecast {
-        flex: 1;
-        width: 50%;
-        margin: 0;
-    }
-
-    #current-weather, #forecast {
-        margin-bottom: 0;
-    }
-
-    #forecast-container {
-        flex-direction: column;
-        justify-content: space-between;
-    }
-
-    .forecast-day {
-        border-top: 1px solid #B0BEC5;
-        border-left: none;
-        padding: 0.5rem;
-    }
-
-    .forecast-day:first-child {
-        border-top: none;
-    }
-
-    .spotlights {
-        max-width: 1200px;
-        margin: 2rem auto;
-    }
-
-    #spotlight-container.grid-view {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 1rem;
-    }
-
-    #spotlight-container.grid-view .spotlight-card {
-        padding: 1rem;
-    }
 }
 
+/* Media Query min-width 768px */
 @media (min-width: 768px) {
+    /* Header */
     header h1 {
         font-size: 3rem;
     }
 
+    /* Hero */
     .hero img {
         max-height: 500px;
     }
 
+    /* Business Directory */
     #member-container.grid-view .member-card {
         padding: 1.5rem;
     }
@@ -197,6 +200,16 @@
         font-size: 1rem;
     }
 
+    /* Home Page Styles */
+    .card h3 {
+        font-size: 1.4rem;
+    }
+
+    .card p {
+        font-size: 1rem;
+    }
+
+    /* Footer */
     footer .social-icons a {
         width: 3rem;
         height: 3rem;
@@ -207,6 +220,7 @@
         height: 80%;
     }
 
+    /* Business Directory */
     .view-toggle button {
         padding: 0.5rem 1rem;
         border: none;
@@ -218,30 +232,5 @@
 
     .view-toggle button.active {
         background-color: #2E7D32;
-    }
-
-    /* Home Page Styles */
-    .event-card h3 {
-        font-size: 1.4rem;
-    }
-
-    .event-card p {
-        font-size: 1rem;
-    }
-
-    #current-weather h3, #forecast h3 {
-        font-size: 1.4rem;
-    }
-
-    #current-weather p, #forecast p {
-        font-size: 1rem;
-    }
-
-    #spotlight-container.grid-view .spotlight-card h3 {
-        font-size: 1.4rem;
-    }
-
-    #spotlight-container.grid-view .spotlight-card p {
-        font-size: 1rem;
     }
 }
