@@ -54,11 +54,11 @@
             <img src="images/hero.jpg" alt="Scenic view of Highland, Utah" loading="lazy">
             <a href="join.html" class="cta-button cta-button-position">Join the Chamber</a>
         </section>
-        
+    
         <div class="info-row">
             <section class="events">
                 <h2>Current Events</h2>
-                <div class="event-card">
+                <div class="event-card card">
                     <h3>Annual Business Expo</h3>
                     <p><strong>Date:</strong> April 15, 2025</p>
                     <p><strong>Location:</strong> Highland Community Center</p>
@@ -66,26 +66,28 @@
                 </div>
             </section>
     
-            <section class="current-weather">
-                <h2>Weather in Highland, UT</h2>
-                <div id="current-weather">
-                    <h3>Current Conditions</h3>
-                    <p><strong>Temperature:</strong> <span id="current-temp"></span>°F</p>
-                    <p><strong>High:</strong> <span id="current-high"></span>°F</p>
-                    <p><strong>Low:</strong> <span id="current-low"></span>°F</p>
-                    <p><strong>Humidity:</strong> <span id="current-humidity"></span>%</p>
-                    <p><strong>Sunrise:</strong> <span id="current-sunrise"></span></p>
-                    <p><strong>Sunset:</strong> <span id="current-sunset"></span></p>
-                    <p><strong>Description:</strong> <span id="weather-desc"></span></p>
-                </div>
-            </section>
+            <div class="weather-wrapper">
+                <section class="current-weather">
+                    <h2>Weather in Highland, UT</h2>
+                    <div id="current-weather" class="card">
+                        <h3>Current Conditions</h3>
+                        <p><strong>Temperature:</strong> <span id="current-temp"></span>°F</p>
+                        <p><strong>High:</strong> <span id="current-high"></span>°F</p>
+                        <p><strong>Low:</strong> <span id="current-low"></span>°F</p>
+                        <p><strong>Humidity:</strong> <span id="current-humidity"></span>%</p>
+                        <p><strong>Sunrise:</strong> <span id="current-sunrise"></span></p>
+                        <p><strong>Sunset:</strong> <span id="current-sunset"></span></p>
+                        <p><strong>Description:</strong> <span id="weather-desc"></span></p>
+                    </div>
+                </section>
     
-            <section class="forecast">
-                <h2>3-Day Forecast</h2>
-                <div id="forecast">
-                    <div id="forecast-container"></div>
-                </div>
-            </section>
+                <section class="forecast">
+                    <h2>3-Day Forecast</h2>
+                    <div id="forecast" class="card">
+                        <div id="forecast-container"></div>
+                    </div>
+                </section>
+            </div>
         </div>
     
         <section class="spotlights">

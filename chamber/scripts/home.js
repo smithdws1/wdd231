@@ -26,7 +26,6 @@ document.addEventListener("DOMContentLoaded", () => {
     function displaySpotlights(members) {
         const eligibleMembers = members.filter(member => member.membershipLevel === 3 || member.membershipLevel === 2);
 
-        // Spotlights based on screen width
         const isMobile = window.innerWidth <= 320;
         const numberToShow = isMobile ? 2 : 3;
 
@@ -37,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
         spotlightContainer.innerHTML = "";
         selectedMembers.forEach(member => {
             const spotlightCard = document.createElement("article");
-            spotlightCard.classList.add("spotlight-card");
+            spotlightCard.classList.add("spotlight-card", "card");
 
             const membershipLabel = member.membershipLevel === 3 ? "Gold" : "Silver";
 
@@ -56,6 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     fetchSpotlights();
 
+    // Update spotlights on window resize
     window.addEventListener("resize", () => {
         fetchSpotlights();
     });
