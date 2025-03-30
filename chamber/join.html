@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Fake Highland Chamber of Commerce Join - Join our chamber in Highland, Utah, created by David Smith for WDD231.">
+    <meta name="description" content="Join the Fake Highland Chamber of Commerce - Apply for membership today! Created by David Smith for WDD231.">
     <meta name="author" content="David Smith">
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="Fake Highland Chamber of Commerce - Join">
@@ -14,18 +14,17 @@
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Fake Highland Chamber of Commerce - Join">
-    <meta name="twitter:description" content="Fake Highland Chamber of Commerce Join - Join our chamber in Highland, Utah, created by David Smith for WDD231.">
+    <meta name="twitter:description" content="Join the Fake Highland Chamber of Commerce - Apply for membership today! Created by David Smith for WDD231.">
     <meta name="twitter:image" content="https://smithdws1.github.io/wdd231/chamber/images/hero.jpg">
     <title>Fake Highland Chamber of Commerce - Join</title>
     <link rel="icon" href="images/favicon.ico">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Roboto&display=swap" as="style">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Roboto&display=swap">
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/larger.css">
     <script defer src="scripts/date.js"></script>
-    <script defer src="scripts/directory.js"></script>
+    <script defer src="scripts/join.js"></script>
 </head>
 
 <body>
@@ -36,7 +35,7 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="directory.html">Business Directory</a></li>
                 <li><a href="discover.html">Discover</a></li>
-                <li><a href="join.html">Join</a></li>
+                <li><a href="join.html" class="active">Join</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="event.html">Events</a></li>
             </ul>
@@ -44,13 +43,108 @@
     </header>
 
     <main>
-        <h1>Fake Highland Chamber of Commerce - Join</h1>
-        <section class="hero">
-            <img src="images/hero.jpg" alt="Scenic view of Highland, Utah" loading="lazy">
-        </section>
-        <h2>Join Us</h2>
-        <div class="under-construction">
-            <p>🚧 This page is under construction. Check back soon to join the Fake Highland Chamber of Commerce! 🚧</p>
+        <h1>Join the Chamber</h1>
+        <div class="join-content">
+            <section class="join-form">
+                <h2>Membership Application</h2>
+                <form method="get" action="thankyou.html" id="membership-form">
+                    <label for="firstname">First Name:
+                        <input type="text" id="firstname" name="firstname" title="Applicant's First Name"
+                            autocomplete="given-name" required>
+                    </label>
+                    <label for="lastname">Last Name:
+                        <input type="text" id="lastname" name="lastname" title="Applicant's Last Name"
+                            autocomplete="family-name" required>
+                    </label>
+                    <label for="orgtitle">Organizational Title:
+                        <input type="text" id="orgtitle" name="orgtitle" title="Your Title in the Organization"
+                            autocomplete="organization-title" pattern="[A-Za-z\s-]{7,}" required>
+                    </label>
+                    <label for="email">Email Address:
+                        <input type="email" id="email" name="email" title="Your Email Address" autocomplete="email"
+                            placeholder="example@domain.com" required>
+                    </label>
+                    <label for="phone">Mobile Phone:
+                        <input type="tel" id="phone" name="phone" title="Your Mobile Phone Number" autocomplete="tel"
+                            required>
+                    </label>
+                    <label for="businessname">Business/Organization Name:
+                        <input type="text" id="businessname" name="businessname" title="Business or Organization Name"
+                            autocomplete="organization" required>
+                    </label>
+                    <label for="membership">Membership Level:
+                        <select id="membership" name="membership" title="Select Membership Level" required>
+                            <option value="" disabled selected>Select a level</option>
+                            <option value="np">NP Membership (Non-Profit)</option>
+                            <option value="bronze">Bronze Membership</option>
+                            <option value="silver">Silver Membership</option>
+                            <option value="gold">Gold Membership</option>
+                        </select>
+                    </label>
+                    <label for="description">Business Description:
+                        <textarea id="description" name="description"
+                            title="Describe Your Business or Organization"></textarea>
+                    </label>
+                    <input type="hidden" id="timestamp" name="timestamp">
+                    <input type="submit" value="Join">
+                </form>
+            </section>
+
+            <section class="membership-levels">
+                <h2>Membership Levels</h2>
+                <div id="membership-cards">
+                    <div class="membership-card card" data-modal="modal-np">
+                        <h3>NP Membership</h3>
+                        <p><a href="#modal-np" class="modal-trigger">Learn More</a></p>
+                    </div>
+                    <div class="membership-card card" data-modal="modal-bronze">
+                        <h3>Bronze Membership</h3>
+                        <p><a href="#modal-bronze" class="modal-trigger">Learn More</a></p>
+                    </div>
+                    <div class="membership-card card" data-modal="modal-silver">
+                        <h3>Silver Membership</h3>
+                        <p><a href="#modal-silver" class="modal-trigger">Learn More</a></p>
+                    </div>
+                    <div class="membership-card card" data-modal="modal-gold">
+                        <h3>Gold Membership</h3>
+                        <p><a href="#modal-gold" class="modal-trigger">Learn More</a></p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Modals -->
+        <div id="modal-np" class="modal">
+            <div class="modal-content">
+                <span class="modal-close">&times;</span>
+                <h3>NP Membership (Non-Profit)</h3>
+                <p><strong>Cost:</strong> Free</p>
+                <p><strong>Benefits:</strong> Access to networking events, listing in directory, event discounts.</p>
+            </div>
+        </div>
+        <div id="modal-bronze" class="modal">
+            <div class="modal-content">
+                <span class="modal-close">&times;</span>
+                <h3>Bronze Membership</h3>
+                <p><strong>Cost:</strong> $100/year</p>
+                <p><strong>Benefits:</strong> All NP benefits plus basic advertising, 10% off training.</p>
+            </div>
+        </div>
+        <div id="modal-silver" class="modal">
+            <div class="modal-content">
+                <span class="modal-close">&times;</span>
+                <h3>Silver Membership</h3>
+                <p><strong>Cost:</strong> $250/year</p>
+                <p><strong>Benefits:</strong> All Bronze benefits plus spotlight eligibility, 20% off events.</p>
+            </div>
+        </div>
+        <div id="modal-gold" class="modal">
+            <div class="modal-content">
+                <span class="modal-close">&times;</span>
+                <h3>Gold Membership</h3>
+                <p><strong>Cost:</strong> $500/year</p>
+                <p><strong>Benefits:</strong> All Silver benefits plus premium advertising, free training.</p>
+            </div>
         </div>
     </main>
 
@@ -76,13 +170,13 @@
             </a>
         </div>
         <div class="footer-info">
-            <address>
+            <div>
                 <p>© <span id="currentyear"></span> Fake Highland Chamber of Commerce</p>
                 <p>David Smith</p>
                 <p>WDD231</p>
                 <p><img src="images/Emojione_1F1FA-1F1F8.svg.png" alt="US Flag"></p>
                 <p id="lastModified">Last Updated: </p>
-            </address>
+            </div>
         </div>
     </footer>
 </body>

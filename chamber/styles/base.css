@@ -1,4 +1,4 @@
-/* General Styles */
+/* Base Styles */
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
@@ -13,7 +13,7 @@ h1, h2 {
     margin: 0;
 }
 
-/* Header */
+/* Header & Navigation */
 header {
     background-color: #2E7D32;
     color: white;
@@ -34,7 +34,6 @@ header {
     margin: 0.5rem 0;
 }
 
-/* Navigation */
 nav {
     margin-top: 0.5rem;
 }
@@ -69,12 +68,19 @@ nav {
     display: block;
 }
 
-#nav-menu li a:hover, #nav-menu li a.active {
+#nav-menu li a:hover,
+#nav-menu li a.active {
     background-color: #455A64;
     border-radius: 5px;
 }
 
-/* Hero */
+/* Main Content */
+main {
+    margin: 1rem;
+    padding: 0;
+}
+
+/* Hero Section */
 .hero {
     width: 100%;
     margin-bottom: 1rem;
@@ -89,7 +95,7 @@ nav {
     display: block;
 }
 
-/* CTA Button Appearance */
+/* CTA Button */
 .cta-button {
     display: inline-block;
     padding: 0.75rem 1.5rem;
@@ -105,20 +111,13 @@ nav {
     background-color: #455A64;
 }
 
-/* CTA Button Positioning */
 .cta-button-position {
     position: absolute;
     bottom: 1rem;
     right: 1rem;
 }
 
-/* Main Content */
-main {
-    margin: 1rem;
-    padding: 0;
-}
-
-/* Cards */
+/* Card Component */
 .card {
     background-color: white;
     border: 2px solid #B0BEC5;
@@ -139,6 +138,7 @@ main {
     color: #263238;
 }
 
+/* Home Page Sections */
 .info-row {
     display: flex;
     flex-direction: column;
@@ -151,17 +151,8 @@ main {
     gap: 1rem;
 }
 
-/* Events Section */
-.events {
-    margin-bottom: 1rem;
-}
-
-/* Current Weather Section */
-.current-weather {
-    margin-bottom: 1rem;
-}
-
-/* Forecast Section */
+.events,
+.current-weather,
 .forecast {
     margin-bottom: 1rem;
 }
@@ -182,7 +173,6 @@ main {
     border-top: none;
 }
 
-/* Spotlights Section */
 .spotlights {
     margin-bottom: 1rem;
 }
@@ -227,19 +217,24 @@ main {
     background-color: #2E7D32;
 }
 
-#member-container.grid-view {
+#member-container.grid-view,
+#member-container.list-view {
     display: flex;
     flex-direction: column;
     gap: 1rem;
 }
 
-#member-container.grid-view .member-card {
+#member-container.grid-view .member-card,
+#member-container.list-view .member-card {
     background-color: white;
     border: 1px solid #B0BEC5;
     border-radius: 5px;
     padding: 1rem;
-    text-align: center;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#member-container.grid-view .member-card {
+    text-align: center;
 }
 
 #member-container.grid-view .member-card img {
@@ -248,39 +243,7 @@ main {
     border-radius: 5px;
 }
 
-#member-container.grid-view .member-card h3 {
-    margin: 0.5rem 0;
-    font-size: 1.2rem;
-    color: #2E7D32;
-}
-
-#member-container.grid-view .member-card p {
-    margin: 0.3rem 0;
-    color: #263238;
-}
-
-#member-container.grid-view .member-card a {
-    color: #2E7D32;
-    text-decoration: none;
-}
-
-#member-container.grid-view .member-card a:hover {
-    text-decoration: underline;
-}
-
-#member-container.list-view {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
-
 #member-container.list-view .member-card {
-    background-color: white;
-    border: 1px solid #B0BEC5;
-    border-radius: 5px;
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
     align-items: flex-start;
 }
 
@@ -288,24 +251,123 @@ main {
     display: none;
 }
 
-#member-container.list-view .member-card h3 {
-    margin: 0 0 0.5rem 0;
+#member-container .member-card h3 {
+    margin: 0.5rem 0;
     font-size: 1.2rem;
     color: #2E7D32;
 }
 
-#member-container.list-view .member-card p {
-    margin: 0.2rem 0;
+#member-container .member-card p {
+    margin: 0.3rem 0;
     color: #263238;
 }
 
-#member-container.list-view .member-card a {
+#member-container .member-card a {
     color: #2E7D32;
     text-decoration: none;
 }
 
-#member-container.list-view .member-card a:hover {
+#member-container .member-card a:hover {
     text-decoration: underline;
+}
+
+/* Join Page */
+.join-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.join-form {
+    margin-bottom: 1rem;
+}
+
+.join-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.join-form label {
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+}
+
+.join-form input,
+.join-form select,
+.join-form textarea {
+    padding: 0.5rem;
+    border: 1px solid #B0BEC5;
+    border-radius: 5px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.join-form input[type="submit"] {
+    background-color: #2E7D32;
+    color: white;
+    cursor: pointer;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.join-form input[type="submit"]:hover {
+    background-color: #455A64;
+}
+
+/* Membership Cards */
+#membership-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+.membership-card {
+    animation: slideIn 1s ease-out forwards;
+    opacity: 0;
+}
+
+.membership-card:nth-child(1) { animation-delay: 0.2s; }
+.membership-card:nth-child(2) { animation-delay: 0.4s; }
+.membership-card:nth-child(3) { animation-delay: 0.6s; }
+.membership-card:nth-child(4) { animation-delay: 0.8s; }
+
+@keyframes slideIn {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* Modals */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 1rem;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 400px;
+    position: relative;
+}
+
+.modal-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5rem;
+    cursor: pointer;
 }
 
 /* Footer */
@@ -384,7 +446,7 @@ footer .social-icons a img {
     filter: brightness(0) invert(1);
 }
 
-/* Mobile Media */
+/* Mobile Media (max-width: 320px)*/
 @media (max-width: 320px) {
     header h1 {
         font-size: 1.2rem;
@@ -423,15 +485,14 @@ footer .social-icons a img {
         height: 80%;
     }
 
-    .info-row {
-        flex-direction: column;
-    }
-
+    .info-row,
     .weather-wrapper {
         flex-direction: column;
     }
 
-    .events, .current-weather, .forecast {
+    .events,
+    .current-weather,
+    .forecast {
         width: 100%;
         max-width: none;
     }

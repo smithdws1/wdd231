@@ -39,7 +39,8 @@
         display: block;
     }
 
-    #nav-menu li a:hover, #nav-menu li a.active {
+    #nav-menu li a:hover,
+    #nav-menu li a.active {
         background-color: #455A64;
         border-radius: 5px;
     }
@@ -58,21 +59,6 @@
 
     main:not(:has(.hero)) {
         margin-top: 1rem;
-    }
-
-    /* Business Directory */
-    .view-toggle {
-        text-align: right;
-    }
-
-    #member-container.grid-view {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 1rem;
-    }
-
-    #member-container.grid-view .member-card {
-        padding: 1rem;
     }
 
     /* Home Page */
@@ -134,6 +120,41 @@
         padding: 1rem;
     }
 
+    /* Business Directory */
+    .view-toggle {
+        text-align: right;
+    }
+
+    #member-container.grid-view {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1rem;
+    }
+
+    #member-container.grid-view .member-card {
+        padding: 1rem;
+    }
+
+    /* Join Page */
+    .join-content {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .join-form {
+        flex: 2;
+        margin: 0;
+    }
+
+    .membership-levels {
+        flex: 1;
+        margin: 0;
+    }
+
+    #membership-cards {
+        grid-template-columns: 1fr;
+    }
+
     /* Footer */
     footer {
         padding: 0.5rem;
@@ -175,7 +196,7 @@
     }
 }
 
-/* Media Query min-width 768px */
+/* Media Query: min-width 768px */
 @media (min-width: 768px) {
     /* Header */
     header h1 {
@@ -187,37 +208,13 @@
         max-height: 500px;
     }
 
-    /* Business Directory */
-    #member-container.grid-view .member-card {
-        padding: 1.5rem;
-    }
-
-    #member-container.grid-view .member-card h3 {
-        font-size: 1.4rem;
-    }
-
-    #member-container.grid-view .member-card p {
-        font-size: 1rem;
-    }
-
-    /* Home Page Styles */
+    /* Card Component */
     .card h3 {
         font-size: 1.4rem;
     }
 
     .card p {
         font-size: 1rem;
-    }
-
-    /* Footer */
-    footer .social-icons a {
-        width: 3rem;
-        height: 3rem;
-    }
-
-    footer .social-icons a img {
-        width: 80%;
-        height: 80%;
     }
 
     /* Business Directory */
@@ -232,5 +229,28 @@
 
     .view-toggle button.active {
         background-color: #2E7D32;
+    }
+
+    #member-container.grid-view .member-card {
+        padding: 1.5rem;
+    }
+
+    #member-container.grid-view .member-card h3 {
+        font-size: 1.4rem;
+    }
+
+    #member-container.grid-view .member-card p {
+        font-size: 1rem;
+    }
+
+    /* Footer */
+    footer .social-icons a {
+        width: 3rem;
+        height: 3rem;
+    }
+
+    footer .social-icons a img {
+        width: 80%;
+        height: 80%;
     }
 }
