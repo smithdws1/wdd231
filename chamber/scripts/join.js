@@ -22,19 +22,34 @@ document.addEventListener("DOMContentLoaded", () => {
         trigger.addEventListener("click", (e) => {
             e.preventDefault();
             const modalId = trigger.getAttribute("href").substring(1);
-            document.getElementById(modalId).style.display = "block";
+            const modal = document.getElementById(modalId);
+            modal.showModal();
+            modal.querySelector(".modal-close").focus();
         });
     });
 
     closes.forEach(close => {
         close.addEventListener("click", () => {
-            modals.forEach(modal => modal.style.display = "none");
+            const modal = close.closest(".modal");
+            modal.close();
+            document.querySelector(`[href='#${modal.id}']`).focus();
         });
     });
 
-    window.addEventListener("click", (e) => {
-        if (e.target.classList.contains("modal")) {
-            modals.forEach(modal => modal.style.display = "none");
-        }
+    // Close modal when clicking outside
+    modals.forEach(modal => {
+        modal.addEventListener("click", (e) => {
+            if (e.target === modal) {
+                modal.close();
+                document.querySelector(`[href='#${modal.id}']`).focus();
+            }
+        });
+    });
+
+    // Close modal with Esc key
+    modals.forEach(modal => {
+        modal.addEventListener("close", () => {
+            document.querySelector(`[href='#${modal.id}']`).focus();
+        });
     });
 });
