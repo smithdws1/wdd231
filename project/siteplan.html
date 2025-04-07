@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>WDD 231 - Individual Website Project - Site Plan - Toyland - David Smith</title>
+    <meta name="description" content="Site plan for Toyland, a private Minecraft server management website for the Smith family.">
+    <meta name="author" content="David Warren Smith">
+    <meta name="keywords" content="WDD 231, Individual Website Project, CSS, HTML, JavaScript, Toyland, Family, Minecraft">
+    <link rel="preload" href="styles/siteplan.css" as="style" onload="this.rel='stylesheet'">
+    <link rel="stylesheet" href="styles/siteplan.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap">
+</head>
+
+<body>
+    <header>
+        <h1>Site Plan - Toyland</h1>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Bedrock</a>
+            <a href="#">Java</a>
+        </nav>
+    </header>
+    <main>
+        <div class="tile-container">
+            <div class="tile site-name">
+                <h2>Site Name</h2>
+                <p><strong>Name:</strong> Toyland</p>
+                <p><strong>Reason:</strong> "Toyland" reflects a kid-friendly space where my children, Elijah and Sam,
+                    can explore creativity and fun in Minecraft. It’s simple, memorable, safe for my children and their
+                    friends. And, evokes a sense of adventure in a playful imaginative world perfect for Minecraft 
+                    adventures.</p>
+                <p><em>Domain URI:</em> toyland.mynetgear.com</p>
+            </div>
+            <div class="tile site-purpose">
+                <h2>Site Purpose</h2>
+                <p>The Toyland website serves as a central hub for managing my private Minecraft servers (Bedrock and
+                    Java editions) hosted at home. It provides an easy way for my children and their friends to see a
+                    management dashboard to check server status, and pages to distribute in-game enchants, items, and
+                    gear to players using an RCON API integration.</p>
+            </div>
+            <div class="tile scenario-1">
+                <h2>Scenario 1</h2>
+                <p>Is the server online, and can I start it if it isn't? (Eli, age 8) This will be a responsive button,
+                    either Red or Green to indicate the server status. Red for offline and the button will start the
+                    server. Green for online and will reboot the server.</p>
+            </div>
+            <div class="tile scenario-2">
+                <h2>Scenario 2</h2>
+                <p>Can I get a diamond sword with Sharpness V for the Java server? (Frien Kobe, age 8) These will be 
+                    selectors based on live queries against the server. The names of the players are pulled live. The 
+                    enchantments and gear are arrays because they're fixed content values.</p>
+            </div>
+            <div class="tile typography">
+                <h2>Typography</h2>
+                <p>The typography reflects readability and a Minecraft-inspired style:</p>
+                <ul>
+                    <li><strong>Font: "Roboto"</strong> - Used for body text for clean readability.</li>
+                    <li><strong>Font: "Mojangles"</strong> - Used for headings to mimic Minecraft’s pixelated text
+                        style.</li>
+                </ul>
+            </div>
+            <div class="tile color-schema">
+                <h2>Color Schema</h2>
+                <p>The color scheme is inspired by Minecraft’s aesthetic—earthy tones with a modern twist:</p>
+                <ul>
+                    <li><strong>#2F4858 (Dark Slate):</strong> Used for headers and navigation backgrounds.</li>
+                    <li><strong>#F5E050 (Golden Yellow):</strong> Used for accents, buttons, and highlights.</li>
+                </ul>
+            </div>
+            <div class="tile wireframe">
+                <h2>Wireframes</h2>
+                <p>Wireframes for desktop views are shown below, using a card-based layout inspired by a 3x3 grid
+                    design. Mobile layout will stack the content vertically. The form requirement will eventually send
+                    an email to the site admin (me).</p>
+            </div>
+        </div>
+        <div class="wireframes">
+            <h2>Toyland Private Minecraft Server Home Page</h2>
+            <div class="image-center">
+                <img src="images/Homepage.png" alt="Desktop wireframe of Toyland home page layout" width="600">
+            </div>
+            <h2>Toyland Private Minecraft Server Java Edition Page</h2>
+            <div class="image-center">
+                <img src="images/java.png" alt="Desktop wireframe of Toyland Java Edition page" width="600">
+            </div>
+            <h2>Toyland Private Minecraft Server Bedrock Edition Page</h2>
+            <div class="image-center">
+                <img src="images/bedrock.png" alt="Desktop wireframe of Toyland Bedrock Edition page" width="600">
+            </div>
+            <p><em>Note:</em> The wireframes represent the desktop view with a 3x3 grid layout for navigation to the
+                Bedrock and Java Edition pages. The Bedrock and Java pages are nearly identical in layout, with mobile
+                views stacking the content vertically. One of the tiles will be a form to submit an email to the site 
+                admin (me), eventually relaying via my O365 e-mail server.</p>
+        </div>
+    </main>
+    <footer>
+        <p>© 2025 Toyland Site Plan - David Warren Smith</p>
+    </footer>
+</body>
+
+</html>

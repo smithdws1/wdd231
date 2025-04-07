@@ -1,0 +1,223 @@
+/* Import Mojangles font */
+@font-face {
+    font-family: 'Mojangles';
+    src: url('../fonts/mojangles.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Import Google Fonts for Roboto */
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+/* General Body Styling */
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #2F4858;
+    background-color: #f5f5f5;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #2F4858;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    width: 100%;
+    max-width: 950px;
+    margin: 0 auto;
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+/* Header Styling */
+header {
+    background-color: #2F4858;
+    color: white;
+    padding: 1rem;
+    width: 100%;
+    max-width: 950px;
+    margin: 0 auto;
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    box-sizing: border-box;
+}
+
+/* Centered h1 Styling */
+header h1 {
+    font-family: 'Mojangles', cursive;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+/* Navigation Styling */
+header nav {
+    position: absolute;
+    bottom: 0.5rem;
+    right: 1rem;
+    display: flex;
+    gap: 1rem;
+}
+
+header nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+header nav a:hover {
+    color: #F5E050;
+}
+
+/* Main Section Styling */
+main {
+    text-align: center;
+    padding: 2rem;
+    width: 100%;
+    max-width: 950px;
+}
+
+/* Center the h2 in main */
+main h2 {
+    font-family: 'Mojangles', cursive;
+    max-width: 950px;
+    margin: 0 auto 2rem;
+    font-size: 1.5rem;
+    color: #2F4858;
+}
+
+/* Tile Container Styling */
+.tile-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(256px, 1fr));
+    grid-gap: 1rem;
+    max-width: 950px;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+/* For consistent tile size across all pages */
+.tile {
+    height: 256px;
+    width: 100%;
+    max-width: 256px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    text-align: center;
+    font-size: 1rem;
+    color: white;
+    text-decoration: none;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    position: relative;
+    padding-bottom: 1rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+    background-size: 128px 128px;
+    background-repeat: repeat;
+    background-position: center;
+}
+
+/* Mouse-over effect for clickable tiles */
+.tile:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Title Styling */
+.tile h2 {
+    font-family: 'Mojangles', cursive;
+    margin: 0;
+    font-size: 1.5rem;
+    color: white;
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+/* Tile Content Styling */
+.tile p, .tile ul {
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.9rem;
+    padding: 0 10px;
+    margin: 0;
+    color: #fff;
+}
+
+/* Tile Background Images */
+.tile.site-name {
+    background-image: url('../images/pic6.png');
+}
+
+.tile.site-purpose {
+    background-image: url('../images/pic2.png');
+}
+
+.tile.scenario-1 {
+    background-image: url('../images/pic4.png');
+}
+
+.tile.scenario-2 {
+    background-image: url('../images/pic1.png');
+}
+
+.tile.typography {
+    background-image: url('../images/pic5.png');
+}
+
+.tile.color-schema {
+    background-image: url('../images/pic6.png');
+}
+
+.tile.wireframe {
+    background-image: url('../images/pic3.png');
+}
+
+/* Wireframe Section Styling */
+.wireframes {
+    margin-top: 2rem;
+}
+
+.wireframes h2 {
+    font-family: 'Mojangles', cursive;
+    font-size: 1.2rem;
+    color: #388E3C;
+    text-align: left;
+}
+
+.wireframes img {
+    max-width: 100%;
+    height: auto;
+}
+
+.image-center {
+    text-align: center;
+    margin: 1rem 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .tile-container {
+        grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+    }
+}
