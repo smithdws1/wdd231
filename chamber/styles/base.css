@@ -462,7 +462,7 @@ footer .social-icons a img {
     filter: brightness(0) invert(1);
 }
 
-/* Mobile Media (Small Screens: up to 640px) */
+/* Mobile Media up to 640px */
 @media (max-width: 640px) {
     header h1 {
         font-size: 1.2rem;
@@ -616,10 +616,9 @@ footer .social-icons a img {
 }
 
 .discover-card .learn-more {
-    composes: btn; /* If using CSS modules; otherwise, manually apply .btn styles */
+    composes: btn;
 }
 
-/* Apply btn styles directly since composes isn't standard CSS */
 .discover-card .learn-more {
     display: inline-block;
     padding: 0.5rem 1rem;
@@ -635,7 +634,6 @@ footer .social-icons a img {
     background-color: var(--secondary-color);
 }
 
-/* Small screens grid areas */
 #card1 { grid-area: card1; }
 #card2 { grid-area: card2; }
 #card3 { grid-area: card3; }
