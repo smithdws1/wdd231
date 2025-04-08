@@ -1,8 +1,34 @@
-/* Media Query: min-width 321px */
-@media (min-width: 321px) {
+/* Shared Styles */
+@media (min-width: 641px) {
+    .discover-card img:hover {
+        transform: scale(1.05);
+        transition: transform 0.3s ease;
+    }
+}
+
+/* Medium Screens 641px to 1024px */
+@media (min-width: 641px) and (max-width: 1024px) {
+    .discover-grid {
+        grid-template-areas:
+            "header header"
+            "hero hero"
+            "subheader subheader"
+            "gallery sidebar";
+        grid-template-columns: 3fr 1fr;
+    }
+
+    .gallery {
+        grid-template-areas:
+            "card1 card2"
+            "card3 card4"
+            "card5 card6"
+            "card7 card8";
+        grid-template-columns: repeat(2, 1fr);
+    }
+
     /* Header */
     header {
-        padding: 1rem;
+        padding: var(--spacing-md);
     }
 
     .header-content {
@@ -33,16 +59,7 @@
     }
 
     #nav-menu li a {
-        color: white;
-        text-decoration: none;
-        padding: 0.5rem 1rem;
-        display: block;
-    }
-
-    #nav-menu li a:hover,
-    #nav-menu li a.active {
-        background-color: #455A64;
-        border-radius: 5px;
+        padding: var(--spacing-sm) var(--spacing-md);
     }
 
     /* Hero */
@@ -54,18 +71,16 @@
     main {
         max-width: 1200px;
         margin: 2rem auto;
-        padding: 0 1rem;
+        padding: 0 var(--spacing-md);
     }
 
     main:not(:has(.hero)) {
-        margin-top: 1rem;
+        margin-top: var(--spacing-md);
     }
 
     /* Home Page */
     .info-row {
-        display: flex;
         flex-direction: row;
-        gap: 1rem;
     }
 
     .events {
@@ -75,17 +90,10 @@
 
     .weather-wrapper {
         flex: 2;
-        display: flex;
         flex-direction: row;
-        gap: 1rem;
     }
 
-    .current-weather {
-        flex: 1;
-        margin: 0;
-    }
-
-    .forecast {
+    .current-weather, .forecast {
         flex: 1;
         margin: 0;
     }
@@ -96,9 +104,8 @@
     }
 
     .forecast-day {
-        border-top: 1px solid #B0BEC5;
-        border-left: none;
-        padding: 0.5rem;
+        border-top: 1px solid var(--border-color);
+        padding: var(--spacing-sm);
     }
 
     .forecast-day:first-child {
@@ -111,13 +118,11 @@
     }
 
     #spotlight-container.grid-view {
-        display: grid;
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 1rem;
     }
 
     #spotlight-container.grid-view .spotlight-card {
-        padding: 1rem;
+        padding: var(--spacing-md);
     }
 
     /* Business Directory */
@@ -126,13 +131,11 @@
     }
 
     #member-container.grid-view {
-        display: grid;
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 1rem;
     }
 
     #member-container.grid-view .member-card {
-        padding: 1rem;
+        padding: var(--spacing-md);
     }
 
     /* Join Page */
@@ -141,14 +144,16 @@
         justify-content: space-between;
     }
 
+    .join-form, .membership-levels {
+        margin: 0;
+    }
+
     .join-form {
         flex: 2;
-        margin: 0;
     }
 
     .membership-levels {
         flex: 1;
-        margin: 0;
     }
 
     #membership-cards {
@@ -157,17 +162,7 @@
 
     /* Footer */
     footer {
-        padding: 0.5rem;
-    }
-
-    footer .footer-contact p,
-    footer .footer-info p {
-        margin: 0.1rem 0;
-    }
-
-    footer .footer-info img {
-        vertical-align: middle;
-        width: 20px;
+        padding: var(--spacing-sm);
     }
 
     footer .social-icons {
@@ -181,23 +176,27 @@
     footer .social-icons a {
         width: 2.5rem;
         height: 2.5rem;
-        transition: background-color 0.3s ease;
-    }
-
-    footer .social-icons a:hover {
-        background-color: #B0BEC5;
-    }
-
-    footer .social-icons a img {
-        width: 80%;
-        height: 80%;
-        object-fit: contain;
-        filter: brightness(0) invert(1);
     }
 }
 
-/* Media Query: min-width 768px */
-@media (min-width: 768px) {
+/* Large Screens above 1025px */
+@media (min-width: 1025px) {
+    .discover-grid {
+        grid-template-areas:
+            "header header header"
+            "hero hero hero"
+            "subheader subheader subheader"
+            "gallery gallery sidebar";
+        grid-template-columns: 2fr 2fr 1fr;
+    }
+
+    .gallery {
+        grid-template-areas:
+            "card1 card2 card3 card4"
+            "card5 card6 card7 card8";
+        grid-template-columns: repeat(4, 1fr);
+    }
+
     /* Header */
     header h1 {
         font-size: 3rem;
@@ -219,16 +218,14 @@
 
     /* Business Directory */
     .view-toggle button {
-        padding: 0.5rem 1rem;
-        border: none;
-        background-color: #455A64;
+        padding: var(--spacing-sm) var(--spacing-md);
+        background-color: var(--secondary-color);
         color: white;
-        cursor: pointer;
         border-radius: 5px;
     }
 
     .view-toggle button.active {
-        background-color: #2E7D32;
+        background-color: var(--primary-color);
     }
 
     #member-container.grid-view .member-card {
@@ -247,60 +244,5 @@
     footer .social-icons a {
         width: 3rem;
         height: 3rem;
-    }
-
-    footer .social-icons a img {
-        width: 80%;
-        height: 80%;
-    }
-}
-
-/* Medium Screens (641px - 1024px) */
-@media (min-width: 641px) {
-    .discover-grid {
-        grid-template-areas:
-            "header header"
-            "hero hero"
-            "subheader subheader"
-            "gallery sidebar";
-        grid-template-columns: 3fr 1fr;
-    }
-
-    .gallery {
-        grid-template-areas:
-            "card1 card2"
-            "card3 card4"
-            "card5 card6"
-            "card7 card8";
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .discover-card img:hover {
-        transform: scale(1.05);
-        transition: transform 0.3s ease;
-    }
-}
-
-/* Large Screens (1025px and above) */
-@media (min-width: 1025px) {
-    .discover-grid {
-        grid-template-areas:
-            "header header header"
-            "hero hero hero"
-            "subheader subheader subheader"
-            "gallery gallery sidebar";
-        grid-template-columns: 2fr 2fr 1fr;
-    }
-
-    .gallery {
-        grid-template-areas:
-            "card1 card2 card3 card4"
-            "card5 card6 card7 card8";
-        grid-template-columns: repeat(4, 1fr);
-    }
-
-    .discover-card img:hover {
-        transform: scale(1.05);
-        transition: transform 0.3s ease;
     }
 }
