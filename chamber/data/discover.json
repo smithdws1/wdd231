@@ -1,0 +1,58 @@
+[
+    {
+        "name": "Highland Glen Park",
+        "address": "4800 Knight Ave, Highland, UT 84003",
+        "description": "A scenic park with a pond, walking trails, and picnic areas.",
+        "image": "images/highland-glen-park.webp",
+        "url": "https://www.highlandcity.org/159/Highland-Glen-Park"
+    },
+    {
+        "name": "Lone Peak Wilderness Trailhead",
+        "address": "North Grove Drive 40.482671417201374, -111.7502914192833",
+        "description": "A popular hiking trailhead with stunning views of Utah Valley.",
+        "image": "images/dry-creek-trail.webp",
+        "url": "https://www.alltrails.com/parks/us/utah/lone-peak-wilderness"
+    },
+    {
+        "name": "Highland City Library",
+        "address": "5400 W Civic Center Dr, Highland, UT 84003",
+        "description": "A community hub offering books, events, and resources.",
+        "image": "images/highland-library.webp",
+        "url": "https://www.highlandut.gov/1160/Library"
+    },
+    {
+        "name": "Timpanogos Cave",
+        "address": "2038 Alpine Loop Rd, Highland, UT 84003",
+        "description": "A nearby cave system with guided tours and natural beauty.",
+        "image": "images/timpanogos-cave.webp",
+        "url": "https://www.nps.gov/tica/index.htm"
+    },
+    {
+        "name": "Highland Farmers Market",
+        "address": "Town Center Plaza, Highland, UT 84003",
+        "description": "Seasonal market featuring local produce and crafts.",
+        "image": "images/farmers-market.webp",
+        "url": "https://highland-farmers-market.com/"
+    },
+    {
+        "name": "Lone Peak High School",
+        "address": "10189 N 4800 W, Highland, UT 84003",
+        "description": "Home of the Knights with excellent sports and academics.",
+        "image": "images/lone-peak-high.webp",
+        "url": "https://lphs.alpineschools.org/"
+    },
+    {
+        "name": "Heritage Park",
+        "address": "10400 N Alpine Hwy, Highland, UT 84003",
+        "description": "A historical park with playgrounds and open spaces.",
+        "image": "images/heritage-park.webp",
+        "url": "https://highlandcity.recdesk.com/Community/Facility/Detail?facilityId=9"
+    },
+    {
+        "name": "Artisan Square",
+        "address": "6000 W 5400 N, Highland, UT 84003",
+        "description": "A local shopping area with unique boutiques and eateries.",
+        "image": "images/artisan-square.webp",
+        "url": "https://www.artisansquare.com/"
+    }
+]

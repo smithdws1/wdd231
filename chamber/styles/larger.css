@@ -254,3 +254,53 @@
         height: 80%;
     }
 }
+
+/* Medium Screens (641px - 1024px) */
+@media (min-width: 641px) {
+    .discover-grid {
+        grid-template-areas:
+            "header header"
+            "hero hero"
+            "subheader subheader"
+            "gallery sidebar";
+        grid-template-columns: 3fr 1fr;
+    }
+
+    .gallery {
+        grid-template-areas:
+            "card1 card2"
+            "card3 card4"
+            "card5 card6"
+            "card7 card8";
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .discover-card img:hover {
+        transform: scale(1.05);
+        transition: transform 0.3s ease;
+    }
+}
+
+/* Large Screens (1025px and above) */
+@media (min-width: 1025px) {
+    .discover-grid {
+        grid-template-areas:
+            "header header header"
+            "hero hero hero"
+            "subheader subheader subheader"
+            "gallery gallery sidebar";
+        grid-template-columns: 2fr 2fr 1fr;
+    }
+
+    .gallery {
+        grid-template-areas:
+            "card1 card2 card3 card4"
+            "card5 card6 card7 card8";
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .discover-card img:hover {
+        transform: scale(1.05);
+        transition: transform 0.3s ease;
+    }
+}
