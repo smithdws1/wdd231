@@ -1,38 +1,41 @@
 /* Base Styles */
-:root {
-    --primary-color: #2E7D32;
-    --secondary-color: #455A64;
-    --text-color: #263238;
-    --light-bg: #F5F5F0;
-    --border-color: #B0BEC5;
-    --spacing-sm: 0.5rem;
-    --spacing-md: 1rem;
-}
-
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: var(--light-bg);
-    color: var(--text-color);
+    background-color: #F5F5F0;
+    color: #263238;
 }
 
 h1, h2 {
     font-family: 'Merriweather', serif;
-    color: var(--primary-color);
+    color: #2E7D32;
     margin: 0;
 }
 
 /* Header & Navigation */
 header {
-    background-color: var(--primary-color);
+    background-color: #2E7D32;
     color: white;
     text-align: center;
-    padding: var(--spacing-sm);
+    padding: 0.5rem;
+}
+
+.header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.site-title {
+    font-family: 'Merriweather', serif;
+    font-size: 1.5rem;
+    color: white;
+    margin: 0.5rem 0;
 }
 
 nav {
-    margin-top: var(--spacing-sm);
+    margin-top: 0.5rem;
 }
 
 #menu-toggle {
@@ -61,26 +64,26 @@ nav {
 #nav-menu li a {
     color: white;
     text-decoration: none;
-    padding: var(--spacing-md);
+    padding: 1rem;
     display: block;
 }
 
 #nav-menu li a:hover,
 #nav-menu li a.active {
-    background-color: var(--secondary-color);
+    background-color: #455A64;
     border-radius: 5px;
 }
 
 /* Main Content */
 main {
-    margin: var(--spacing-md);
+    margin: 1rem;
     padding: 0;
 }
 
 /* Hero Section */
 .hero {
     width: 100%;
-    margin-bottom: var(--spacing-md);
+    margin-bottom: 1rem;
     position: relative;
 }
 
@@ -92,83 +95,77 @@ main {
     display: block;
 }
 
-/* Reusable Button Styles */
-.btn {
+/* CTA Button */
+.cta-button {
     display: inline-block;
-    padding: 0.5rem 1rem;
-    background-color: var(--primary-color);
+    padding: 0.75rem 1.5rem;
+    background-color: #2E7D32;
     color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
     text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
     transition: background-color 0.3s ease;
 }
 
-.btn:hover {
-    background-color: var(--secondary-color);
-}
-
-.cta-button {
-    padding: 0.75rem 1.5rem;
-    font-weight: bold;
+.cta-button:hover {
+    background-color: #455A64;
 }
 
 .cta-button-position {
     position: absolute;
-    bottom: var(--spacing-md);
-    right: var(--spacing-md);
+    bottom: 1rem;
+    right: 1rem;
 }
 
 /* Card Component */
 .card {
     background-color: white;
-    border: 2px solid var(--border-color);
+    border: 2px solid #B0BEC5;
     border-radius: 8px;
-    padding: var(--spacing-md);
+    padding: 1rem;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    margin-bottom: var(--spacing-md);
+    margin-bottom: 1rem;
 }
 
 .card h3 {
-    margin: 0 0 var(--spacing-sm) 0;
+    margin: 0 0 0.5rem 0;
     font-size: 1.2rem;
-    color: var(--primary-color);
+    color: #2E7D32;
 }
 
 .card p {
     margin: 0.3rem 0;
-    color: var(--text-color);
+    color: #263238;
 }
 
 /* Home Page Sections */
 .info-row {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-md);
+    gap: 1rem;
 }
 
 .weather-wrapper {
     display: flex;
     flex-direction: row;
-    gap: var(--spacing-md);
+    gap: 1rem;
 }
 
 .events,
 .current-weather,
 .forecast {
-    margin-bottom: var(--spacing-md);
+    margin-bottom: 1rem;
 }
 
 #forecast-container {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-sm);
+    gap: 0.5rem;
 }
 
 .forecast-day {
-    padding: var(--spacing-sm);
-    border-top: 1px solid var(--border-color);
+    padding: 0.5rem;
+    border-top: 1px solid #B0BEC5;
     text-align: center;
 }
 
@@ -177,13 +174,13 @@ main {
 }
 
 .spotlights {
-    margin-bottom: var(--spacing-md);
+    margin-bottom: 1rem;
 }
 
 #spotlight-container.grid-view {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: var(--spacing-md);
+    gap: 1rem;
 }
 
 #spotlight-container.grid-view .spotlight-card img {
@@ -193,7 +190,7 @@ main {
 }
 
 #spotlight-container.grid-view .spotlight-card a {
-    color: var(--primary-color);
+    color: #2E7D32;
     text-decoration: none;
 }
 
@@ -204,35 +201,35 @@ main {
 /* Business Directory */
 .view-toggle {
     text-align: center;
-    margin-bottom: var(--spacing-md);
+    margin-bottom: 1rem;
 }
 
 .view-toggle button {
-    padding: var(--spacing-sm) var(--spacing-md);
+    padding: 0.5rem 1rem;
     border: none;
-    background-color: var(--secondary-color);
+    background-color: #455A64;
     color: white;
     cursor: pointer;
     border-radius: 5px;
 }
 
 .view-toggle button.active {
-    background-color: var(--primary-color);
+    background-color: #2E7D32;
 }
 
 #member-container.grid-view,
 #member-container.list-view {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-md);
+    gap: 1rem;
 }
 
 #member-container.grid-view .member-card,
 #member-container.list-view .member-card {
     background-color: white;
-    border: 1px solid var(--border-color);
+    border: 1px solid #B0BEC5;
     border-radius: 5px;
-    padding: var(--spacing-md);
+    padding: 1rem;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
@@ -255,18 +252,18 @@ main {
 }
 
 #member-container .member-card h3 {
-    margin: var(--spacing-sm) 0;
+    margin: 0.5rem 0;
     font-size: 1.2rem;
-    color: var(--primary-color);
+    color: #2E7D32;
 }
 
 #member-container .member-card p {
     margin: 0.3rem 0;
-    color: var(--text-color);
+    color: #263238;
 }
 
 #member-container .member-card a {
-    color: var(--primary-color);
+    color: #2E7D32;
     text-decoration: none;
 }
 
@@ -278,17 +275,17 @@ main {
 .join-content {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-md);
+    gap: 1rem;
 }
 
 .join-form {
-    margin-bottom: var(--spacing-md);
+    margin-bottom: 1rem;
 }
 
 .join-form form {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-md);
+    gap: 1rem;
 }
 
 .join-form label {
@@ -300,14 +297,14 @@ main {
 .join-form input,
 .join-form select,
 .join-form textarea {
-    padding: var(--spacing-sm);
-    border: 1px solid var(--border-color);
+    padding: 0.5rem;
+    border: 1px solid #B0BEC5;
     border-radius: 5px;
     font-family: 'Roboto', sans-serif;
 }
 
 .join-form input[type="submit"] {
-    background-color: var(--primary-color);
+    background-color: #2E7D32;
     color: white;
     cursor: pointer;
     padding: 0.75rem;
@@ -318,14 +315,14 @@ main {
 }
 
 .join-form input[type="submit"]:hover {
-    background-color: var(--secondary-color);
+    background-color: #455A64;
 }
 
 /* Membership Cards */
 #membership-cards {
     display: grid;
     grid-template-columns: 1fr;
-    gap: var(--spacing-md);
+    gap: 1rem;
 }
 
 .membership-card {
@@ -363,7 +360,7 @@ main {
 .modal-content {
     background-color: white;
     margin: 15% auto;
-    padding: var(--spacing-md);
+    padding: 1rem;
     border-radius: 8px;
     width: 80%;
     max-width: 400px;
@@ -382,20 +379,20 @@ main {
 }
 
 .modal-close:focus {
-    outline: 2px solid var(--primary-color);
+    outline: 2px solid #2E7D32;
     outline-offset: 2px;
 }
 
 /* Footer */
 footer {
-    background-color: var(--primary-color);
+    background-color: #2E7D32;
     color: white;
     padding: 0.3rem;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    gap: var(--spacing-sm);
+    gap: 0.5rem;
     flex-wrap: nowrap;
 }
 
@@ -435,7 +432,7 @@ footer .footer-info img {
 
 footer .social-icons {
     display: flex;
-    gap: var(--spacing-md);
+    gap: 1rem;
     justify-content: center;
 }
 
@@ -452,7 +449,7 @@ footer .social-icons a {
 }
 
 footer .social-icons a:hover {
-    background-color: var(--border-color);
+    background-color: #B0BEC5;
 }
 
 footer .social-icons a img {
@@ -462,8 +459,8 @@ footer .social-icons a img {
     filter: brightness(0) invert(1);
 }
 
-/* Mobile Media up to 640px */
-@media (max-width: 640px) {
+/* Mobile Media (max-width: 320px) */
+@media (max-width: 320px) {
     header h1 {
         font-size: 1.2rem;
     }
@@ -519,7 +516,7 @@ footer .social-icons a img {
 
     .forecast-day {
         border-left: none;
-        border-top: 1px solid var(--border-color);
+        border-top: 1px solid #B0BEC5;
     }
 
     .forecast-day:first-child {
@@ -536,11 +533,13 @@ footer .social-icons a img {
         "subheader"
         "gallery"
         "sidebar";
-    gap: var(--spacing-md);
+    gap: 1rem;
 }
 
 .discover-grid h1 {
     grid-area: header;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
 }
 
 .discover-grid .hero {
@@ -563,39 +562,41 @@ footer .social-icons a img {
         "card6"
         "card7"
         "card8";
-    gap: var(--spacing-md);
+    gap: 1rem;
 }
 
 .visit-message {
     grid-area: sidebar;
     background-color: white;
-    border: 2px solid var(--border-color);
+    border: 2px solid #B0BEC5;
     border-radius: 8px;
-    padding: var(--spacing-md);
+    padding: 1rem;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .visit-message h3 {
-    margin: 0 0 var(--spacing-sm) 0;
+    margin: 0 0 0.5rem 0;
     font-size: 1.2rem;
-    color: var(--primary-color);
+    color: #2E7D32;
 }
 
 .discover-card {
     background-color: white;
-    border: 2px solid var(--border-color);
+    border: 2px solid #B0BEC5;
     border-radius: 8px;
-    padding: var(--spacing-md);
+    padding: 1rem;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .discover-card h2 {
-    margin: 0 0 var(--spacing-sm) 0;
+    margin: 0 0 0.5rem 0;
     font-size: 1.2rem;
 }
 
 .discover-card figure {
     margin: 0;
+    display: flex;
+    justify-content: center;
 }
 
 .discover-card img {
@@ -607,22 +608,18 @@ footer .social-icons a img {
 
 .discover-card address {
     font-style: normal;
-    margin: var(--spacing-sm) 0;
-    color: var(--text-color);
+    margin: 0.5rem 0;
+    color: #263238;
 }
 
 .discover-card p {
-    margin: var(--spacing-sm) 0;
-}
-
-.discover-card .learn-more {
-    composes: btn;
+    margin: 0.5rem 0;
 }
 
 .discover-card .learn-more {
     display: inline-block;
     padding: 0.5rem 1rem;
-    background-color: var(--primary-color);
+    background-color: #2E7D32;
     color: white;
     border: none;
     border-radius: 5px;
@@ -631,7 +628,7 @@ footer .social-icons a img {
 }
 
 .discover-card .learn-more:hover {
-    background-color: var(--secondary-color);
+    background-color: #455A64;
 }
 
 #card1 { grid-area: card1; }

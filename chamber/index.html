@@ -31,30 +31,32 @@
     <script defer src="scripts/currentWeather.js"></script>
     <script defer src="scripts/weatherForecast.js"></script>
     <script defer src="scripts/home.js"></script>
+    <script defer src="scripts/header.js"></script>
 </head>
 
 <body>
     <header>
-        <nav>
-            <button id="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
-            <ul id="nav-menu">
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="directory.html">Business Directory</a></li>
-                <li><a href="discover.html">Discover</a></li>
-                <li><a href="join.html">Join</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="event.html">Events</a></li>
-            </ul>
-        </nav>
+        <div class="header-content">
+            <h1 class="site-title">Fake Highland Chamber of Commerce</h1>
+            <nav>
+                <button id="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
+                <ul id="nav-menu">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="directory.html">Business Directory</a></li>
+                    <li><a href="discover.html">Discover</a></li>
+                    <li><a href="join.html">Join</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="event.html">Events</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
-
     <main>
         <h1>Fake Highland Chamber of Commerce</h1>
         <section class="hero">
             <img src="images/hero.jpg" alt="Scenic view of Highland, Utah" loading="lazy">
             <a href="join.html" class="cta-button cta-button-position">Join the Chamber</a>
         </section>
-    
         <div class="info-row">
             <section class="events">
                 <h2>Current Events</h2>
@@ -62,10 +64,10 @@
                     <h3>Annual Business Expo</h3>
                     <p><strong>Date:</strong> April 15, 2025</p>
                     <p><strong>Location:</strong> Highland Community Center</p>
-                    <p>Join us for our annual expo featuring local businesses, networking opportunities, and workshops.</p>
+                    <p>Join us for our annual expo featuring local businesses, networking opportunities, and workshops.
+                    </p>
                 </div>
             </section>
-    
             <div class="weather-wrapper">
                 <section class="current-weather">
                     <h2>Weather in Highland, UT</h2>
@@ -80,7 +82,6 @@
                         <p><strong>Description:</strong> <span id="weather-desc"></span></p>
                     </div>
                 </section>
-    
                 <section class="forecast">
                     <h2>3-Day Forecast</h2>
                     <div id="forecast" class="card">
@@ -89,13 +90,11 @@
                 </section>
             </div>
         </div>
-    
         <section class="spotlights">
             <h2>Member Spotlights</h2>
             <div id="spotlight-container" class="grid-view" aria-live="polite"></div>
         </section>
     </main>
-
     <footer>
         <div class="footer-contact">
             <address>

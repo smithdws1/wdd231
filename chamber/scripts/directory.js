@@ -1,15 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // Navigation toggle for mobile
-    const menuToggle = document.getElementById("menu-toggle");
-    const navMenu = document.getElementById("nav-menu");
-
-    menuToggle.addEventListener("click", () => {
-        navMenu.classList.toggle("active");
-        const isExpanded = navMenu.classList.contains("active");
-        menuToggle.setAttribute("aria-expanded", isExpanded);
-        menuToggle.textContent = isExpanded ? "✖" : "☰";
-    });
-
     // Fetch and display members
     const memberContainer = document.getElementById("member-container");
     const gridViewBtn = document.getElementById("grid-view");

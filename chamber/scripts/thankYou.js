@@ -1,14 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // Navigation toggle
-    const menuToggle = document.getElementById("menu-toggle");
-    const navMenu = document.getElementById("nav-menu");
-    menuToggle.addEventListener("click", () => {
-        navMenu.classList.toggle("active");
-        const isExpanded = navMenu.classList.contains("active");
-        menuToggle.setAttribute("aria-expanded", isExpanded);
-        menuToggle.textContent = isExpanded ? "✖" : "☰";
-    });
-
     // Display submitted form data
     const urlParams = new URLSearchParams(window.location.search);
     const infoContainer = document.getElementById("submitted-info");

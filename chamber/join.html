@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Join the Fake Highland Chamber of Commerce - Apply for membership today! Created by David Smith for WDD231.">
+    <meta name="description"
+        content="Join the Fake Highland Chamber of Commerce - Apply for membership today! Created by David Smith for WDD231.">
     <meta name="author" content="David Smith">
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="Fake Highland Chamber of Commerce - Join">
@@ -14,40 +15,46 @@
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Fake Highland Chamber of Commerce - Join">
-    <meta name="twitter:description" content="Join the Fake Highland Chamber of Commerce - Apply for membership today! Created by David Smith for WDD231.">
+    <meta name="twitter:description"
+        content="Join the Fake Highland Chamber of Commerce - Apply for membership today! Created by David Smith for WDD231.">
     <meta name="twitter:image" content="https://smithdws1.github.io/wdd231/chamber/images/hero.jpg">
     <title>Fake Highland Chamber of Commerce - Join</title>
     <link rel="icon" href="images/favicon.ico">
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Roboto&display=swap" as="style">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Roboto&display=swap">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Roboto&display=swap"
+        as="style">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Roboto&display=swap">
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/larger.css">
     <script defer src="scripts/date.js"></script>
     <script defer src="scripts/join.js"></script>
+    <script defer src="scripts/header.js"></script>
 </head>
 
 <body>
     <header>
-        <nav>
-            <button id="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
-            <ul id="nav-menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="directory.html">Business Directory</a></li>
-                <li><a href="discover.html">Discover</a></li>
-                <li><a href="join.html" class="active">Join</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="event.html">Events</a></li>
-            </ul>
-        </nav>
+        <div class="header-content">
+            <h1 class="site-title">Fake Highland Chamber of Commerce</h1>
+            <nav>
+                <button id="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
+                <ul id="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="directory.html">Business Directory</a></li>
+                    <li><a href="discover.html">Discover</a></li>
+                    <li><a href="join.html" class="active">Join</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="event.html">Events</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
-
     <main>
         <h1>Join the Chamber</h1>
         <div class="join-content">
             <section class="join-form">
                 <h2>Membership Application</h2>
-                <form method="get" action="/wdd231/chamber/thankyou.html" id="membership-form">
+                <form method="get" action="thankyou.html" id="membership-form">
                     <label for="firstname">First Name:
                         <input type="text" id="firstname" name="firstname" title="Applicant's First Name"
                             autocomplete="given-name" required>
@@ -89,7 +96,6 @@
                     <input type="submit" value="Join">
                 </form>
             </section>
-
             <section class="membership-levels">
                 <h2>Membership Levels</h2>
                 <div id="membership-cards">
@@ -112,7 +118,6 @@
                 </div>
             </section>
         </div>
-
         <!-- Modals -->
         <dialog id="modal-np" class="modal">
             <div class="modal-content">
@@ -143,11 +148,11 @@
                 <button class="modal-close" aria-label="Close modal">×</button>
                 <h3>Gold Membership</h3>
                 <p><strong>Cost:</strong> $500/year</p>
-                <p><strong>Benefits:</strong> All Silver benefits plus premium advertising, free training and events.</p>
+                <p><strong>Benefits:</strong> All Silver benefits plus premium advertising, free training and events.
+                </p>
             </div>
         </dialog>
     </main>
-
     <footer>
         <div class="footer-contact">
             <address>

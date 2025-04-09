@@ -1,14 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // Navigation toggle (reused from home.js)
-    const menuToggle = document.getElementById("menu-toggle");
-    const navMenu = document.getElementById("nav-menu");
-    menuToggle.addEventListener("click", () => {
-        navMenu.classList.toggle("active");
-        const isExpanded = navMenu.classList.contains("active");
-        menuToggle.setAttribute("aria-expanded", isExpanded);
-        menuToggle.textContent = isExpanded ? "✖" : "☰";
-    });
-
     // Set timestamp
     const timestampField = document.getElementById("timestamp");
     timestampField.value = new Date().toLocaleString();

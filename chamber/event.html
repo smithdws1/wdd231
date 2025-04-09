@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Fake Highland Chamber of Commerce Events - Upcoming events in Highland, Utah, created by David Smith for WDD231.">
+    <meta name="description"
+        content="Fake Highland Chamber of Commerce Events - Upcoming events in Highland, Utah, created by David Smith for WDD231.">
     <meta name="author" content="David Smith">
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="Fake Highland Chamber of Commerce - Events">
@@ -14,35 +15,39 @@
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Fake Highland Chamber of Commerce - Events">
-    <meta name="twitter:description" content="Fake Highland Chamber of Commerce Events - Upcoming events in Highland, Utah, created by David Smith for WDD231.">
+    <meta name="twitter:description"
+        content="Fake Highland Chamber of Commerce Events - Upcoming events in Highland, Utah, created by David Smith for WDD231.">
     <meta name="twitter:image" content="https://smithdws1.github.io/wdd231/chamber/images/hero.jpg">
     <title>Fake Highland Chamber of Commerce - Events</title>
     <link rel="icon" href="images/favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Roboto&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/larger.css">
     <script defer src="scripts/date.js"></script>
-    <script defer src="scripts/directory.js"></script>
+    <script defer src="scripts/header.js"></script>
 </head>
 
 <body>
     <header>
-        <nav>
-            <button id="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
-            <ul id="nav-menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="directory.html">Business Directory</a></li>
-                <li><a href="discover.html">Discover</a></li>
-                <li><a href="join.html">Join</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="event.html">Events</a></li>
-            </ul>
-        </nav>
+        <div class="header-content">
+            <h1 class="site-title">Fake Highland Chamber of Commerce</h1>
+            <nav>
+                <button id="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
+                <ul id="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="directory.html">Business Directory</a></li>
+                    <li><a href="discover.html">Discover</a></li>
+                    <li><a href="join.html">Join</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="event.html" class="active">Events</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
-
     <main>
         <h1>Fake Highland Chamber of Commerce - Events</h1>
         <section class="hero">
@@ -53,7 +58,6 @@
             <p>🚧 This page is under construction. Check back soon for upcoming events in Highland, Utah! 🚧</p>
         </div>
     </main>
-
     <footer>
         <div class="footer-contact">
             <address>
