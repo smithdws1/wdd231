@@ -30,8 +30,10 @@ header {
 .site-title {
     font-family: 'Merriweather', serif;
     font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.2;
     color: white;
-    margin: 0.5rem 0;
+    margin: 0 0 0.5rem 0;
 }
 
 nav {
@@ -461,10 +463,6 @@ footer .social-icons a img {
 
 /* Mobile Media (max-width: 320px) */
 @media (max-width: 320px) {
-    header h1 {
-        font-size: 1.2rem;
-    }
-
     footer {
         padding: 0.2rem;
         gap: 0.3rem;

@@ -223,7 +223,7 @@
 /* Media Query: min-width 768px */
 @media (min-width: 768px) {
     /* Header */
-    header h1 {
+    .site-title {
         font-size: 3rem;
     }
 
