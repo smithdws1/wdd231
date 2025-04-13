@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Toyland - A fun Minecraft server manager for the Smith family and friends.">
+    <meta name="author" content="David Smith">
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Toyland - Home">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://smithdws1.github.io/wdd231/toyland/images/toyland-og.png">
+    <meta property="og:url" content="https://smithdws1.github.io/wdd231/toyland/index.html">
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Toyland - Home">
+    <meta name="twitter:description" content="Manage Bedrock and Java Minecraft servers with Toyland!">
+    <meta name="twitter:image" content="https://smithdws1.github.io/wdd231/toyland/images/toyland-og.png">
+    <title>Toyland - Home</title>
+    <link rel="icon" href="images/favicon.ico">
+    <link rel="preload" href="/mojangles.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/toyland.css">
+    <link rel="stylesheet" href="styles/larger.css">
+    <script defer src="scripts/toyland.js" type="module"></script>
+    <script defer src="scripts/date.js" type="module"></script>
+</head>
+
+<body>
+    <header>
+        <h1>Toyland</h1>
+        <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false"
+            aria-controls="nav-links">☰</button>
+        <nav id="nav-links" class="nav-links" aria-label="Main navigation">
+            <a href="index.html" aria-current="page">Home</a>
+            <a href="javaEdition.html">Java Edition</a>
+            <a href="bedrockEdition.html">Bedrock Edition</a>
+        </nav>
+    </header>
+    <main>
+        <h2>Welcome to Toyland!</h2>
+        <p>Join the fun and manage your Minecraft adventures with friends!</p>
+        <section class="tiles-container index-tiles" aria-label="Server Status">
+            <a href="javaEdition.html" class="tile java-tile" aria-label="Java Edition Server Status">
+                <h3>Java Edition</h3>
+                <span class="status" aria-live="polite">Checking...</span>
+            </a>
+            <a href="bedrockEdition.html" class="tile bedrock-tile" aria-label="Bedrock Edition Server Status">
+                <h3>Bedrock Edition</h3>
+                <span class="status" aria-live="polite">Checking...</span>
+            </a>
+        </section>
+    </main>
+    <footer>
+        <p>
+            © <span id="currentyear"></span> David Smith
+            <img src="images/us-flag.png" alt="US Flag" class="flag" width="24" height="16" loading="lazy">
+            | <a href="attributions.html">Attributions</a>
+        </p>
+        <p id="lastModified">Last Updated: </p>
+    </footer>
+</body>
+
+</html>

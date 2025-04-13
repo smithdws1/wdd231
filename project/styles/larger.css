@@ -1,0 +1,45 @@
+/* Larger Screen Enhancements */
+@media (min-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+    .nav-links {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        padding: 0;
+        width: auto;
+    }
+    .nav-links a {
+        padding: 0.5rem 1rem;
+    }
+    .hamburger {
+        display: none;
+    }
+    .tiles-container {
+        grid-template-columns: repeat(3, minmax(256px, 1fr));
+    }
+    .tile h2, .tile h3 {
+        font-size: 1.4rem;
+    }
+    .tile .status {
+        font-size: 0.9rem;
+    }
+    .picker label, #contact-form label {
+        font-size: 1.4rem; /* Match card titles */
+    }
+    .picker select, #contact-form input {
+        font-size: 0.9rem;
+        padding: 0.5rem;
+    }
+    .action-btn, #contact-form button {
+        font-size: 0.9rem;
+        padding: 0.5rem 1rem;
+    }
+    .dynamic-items {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+    .effect-item h4 {
+        font-size: 1rem;
+    }
+}

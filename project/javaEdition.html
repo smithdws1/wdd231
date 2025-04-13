@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Toyland - Manage your Java Edition Minecraft server with fun effects and enchantments.">
+    <meta name="author" content="David Smith">
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Toyland - Java Edition">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://smithdws1.github.io/wdd231/toyland/images/toyland-og.png">
+    <meta property="og:url" content="https://smithdws1.github.io/wdd231/toyland/javaEdition.html">
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Toyland - Java Edition">
+    <meta name="twitter:description" content="Manage your Java Edition Minecraft server with Toyland!">
+    <meta name="twitter:image" content="https://smithdws1.github.io/wdd231/toyland/images/toyland-og.png">
+    <title>Toyland - Java Edition</title>
+    <link rel="icon" href="images/favicon.ico">
+    <link rel="preload" href="/mojangles.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/toyland.css">
+    <link rel="stylesheet" href="styles/larger.css">
+    <script defer src="scripts/javaEdition.js" type="module"></script>
+    <script defer src="scripts/date.js" type="module"></script>
+</head>
+
+<body>
+    <header>
+        <h1>Toyland - Java Edition</h1>
+        <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false"
+            aria-controls="nav-links">☰</button>
+        <nav id="nav-links" class="nav-links" aria-label="Main navigation">
+            <a href="index.html">Home</a>
+            <a href="javaEdition.html" aria-current="page">Java Edition</a>
+            <a href="bedrockEdition.html">Bedrock Edition</a>
+        </nav>
+    </header>
+    <main>
+        <section class="tiles-container" aria-label="Server Management Tools">
+            <article class="tile server-reboot">
+                <div class="image-grid">
+                    <img src="images/pic1.png" alt="Server Reboot Background" width="128" height="128" loading="lazy">
+                    <img src="images/pic1.png" alt="Server Reboot Background" width="128" height="128" loading="lazy">
+                    <img src="images/pic1.png" alt="Server Reboot Background" width="128" height="128" loading="lazy">
+                    <img src="images/pic1.png" alt="Server Reboot Background" width="128" height="128" loading="lazy">
+                    <img src="images/pic1.png" alt="Server Reboot Background" width="128" height="128" loading="lazy">
+                    <img src="images/pic1.png" alt="Server Reboot Background" width="128" height="128" loading="lazy">
+                </div>
+                <h2>Server Reboot</h2>
+                <button class="action-btn" data-action="reboot" aria-label="Reboot Java Edition Server">Reboot</button>
+            </article>
+            <article class="tile">
+                <div class="image-grid">
+                    <img src="images/pic2.png" alt="Effects Background" width="128" height="128" loading="lazy">
+                    <img src="images/pic2.png" alt="Effects Background" width="128" height="128" loading="lazy">
+                    <img src="images/pic2.png" alt="Effects Background" width="128" height="128" loading="lazy">
+                    <img src="images/pic2.png" alt="Effects Background" width="128" height="128" loading="lazy">
+                    <img src="images/pic2.png" alt="Effects Background" width="128" height="128" loading="lazy">
+                    <img src="images/pic2.png" alt="Effects Background" width="128" height="128" loading="lazy">
+                </div>
+                <h2>Effects</h2>
+                <form class="picker">
+                    <label for="player-list-effects">Player:</label>
+                    <select id="player-list-effects" required aria-required="true">
+                        <option value="">Select Player...</option>
+                    </select>
+                    <label for="effects-list">Effect:</label>
+                    <select id="effects-list" required aria-required="true">
+                        <option value="">Select Effect...</option>
+                    </select>
+                    <button class="action-btn" data-type="effect" type="submit">Apply Effect</button>
+                </form>
+            </article>
+            <article class="tile">
+                <div class="image-grid">
+                    <img src="images/pic3.png" alt="Weapon Enchantments Background" width="128" height="128"
+                        loading="lazy">
+                    <img src="images/pic3.png" alt="Weapon Enchantments Background" width="128" height="128"
+                        loading="lazy">
+                    <img src="images/pic3.png" alt="Weapon Enchantments Background" width="128" height="128"
+                        loading="lazy">
+                    <img src="images/pic3.png" alt="Weapon Enchantments Background" width="128" height="128"
+                        loading="lazy">
+                    <img src="images/pic3.png" alt="Weapon Enchantments Background" width="128" height="128"
+                        loading="lazy">
+                    <img src="images/pic3.png" alt="Weapon Enchantments Background" width="128" height="128"
+                        loading="lazy">
+                </div>
+                <h2>Weapon Enchantments</h2>
+                <form class="picker">
+                    <label for="player-list-weapon">Player:</label>
+                    <select id="player-list-weapon" required aria-required="true">
+                        <option value="">Select Player...</option>
+                    </select>
+                    <label for="weapon-list">Enchantment:</label>
+                    <select id="weapon-list" required aria-required="true">
+                        <option value="">Select Enchantment...</option>
+                    </select>
+                    <button class="action-btn" data-type="weapon" type="submit">Apply Enchantment</button>
+                </form>
+            </article>
+            <article class="tile">
+                <div class="image-grid">
+                    <img src="images/pic4.png" alt="Armor Enchantments Background" width="128" height="128"
+                        loading="lazy">
+                    <img src="images/pic4.png" alt="Armor Enchantments Background" width="128" height="128"
+                        loading="lazy">
+                    <img src="images/pic4.png" alt="Armor Enchantments Background" width="128" height="128"
+                        loading="lazy">
+                    <img src="images/pic4.png" alt="Armor Enchantments Background" width="128" height="128"
+                        loading="lazy">
+                    <img src="images/pic4.png" alt="Armor Enchantments Background" width="128" height="128"
+                        loading="lazy">
+                    <img src="images/pic4.png" alt="Armor Enchantments Background" width="128" height="128"
+                        loading="lazy">
+                </div>
+                <h2>Armor Enchantments</h2>
+                <form class="picker">
+                    <label for="player-list-armor">Player:</label>
+                    <select id="player-list-armor" required aria-required="true">
+                        <option value="">Select Player...</option>
+                    </select>
+                    <label for="armor-list">Enchantment:</label>
+                    <select id="armor-list" required aria-required="true">
+                        <option value="">Select Enchantment...</option>
+                    </select>
+                    <button class="action-btn" data-type="armor" type="submit">Apply Enchantment</button>
+                </form>
+            </article>
+            <article class="tile">
+                <div class="image-grid">
+                    <img src="images/pic5.png" alt="Tool Enchantments Background" width="128" height="128"
+                        loading="lazy">
+                    <img src="images/pic5.png" alt="Tool Enchantments Background" width="128" height="128"
+                        loading="lazy">
+                    <img src="images/pic5.png" alt="Tool Enchantments Background" width="128" height="128"
+                        loading="lazy">
+                    <img src="images/pic5.png" alt="Tool Enchantments Background" width="128" height="128"
+                        loading="lazy">
+                    <img src="images/pic5.png" alt="Tool Enchantments Background" width="128" height="128"
+                        loading="lazy">
+                    <img src="images/pic5.png" alt="Tool Enchantments Background" width="128" height="128"
+                        loading="lazy">
+                </div>
+                <h2>Tool Enchantments</h2>
+                <form class="picker">
+                    <label for="player-list-tool">Player:</label>
+                    <select id="player-list-tool" required aria-required="true">
+                        <option value="">Select Player...</option>
+                    </select>
+                    <label for="tool-list">Enchantment:</label>
+                    <select id="tool-list" required aria-required="true">
+                        <option value="">Select Enchantment...</option>
+                    </select>
+                    <button class="action-btn" data-type="tool" type="submit">Apply Enchantment</button>
+                </form>
+            </article>
+            <article class="tile">
+                <div class="image-grid">
+                    <img src="images/pic6.png" alt="Contact Admin Background" width="128" height="128" loading="lazy">
+                    <img src="images/pic6.png" alt="Contact Admin Background" width="128" height="128" loading="lazy">
+                    <img src="images/pic6.png" alt="Contact Admin Background" width="128" height="128" loading="lazy">
+                    <img src="images/pic6.png" alt="Contact Admin Background" width="128" height="128" loading="lazy">
+                    <img src="images/pic6.png" alt="Contact Admin Background" width="128" height="128" loading="lazy">
+                    <img src="images/pic6.png" alt="Contact Admin Background" width="128" height="128" loading="lazy">
+                </div>
+                <h2>Contact Admin</h2>
+                <form id="contact-form" action="form-display.html">
+                    <label for="contact-name">Name:</label>
+                    <input type="text" id="contact-name" required aria-required="true">
+                    <label for="contact-phone">Phone:</label>
+                    <input type="tel" id="contact-phone" required aria-required="true">
+                    <label for="contact-email">Email:</label>
+                    <input type="email" id="contact-email" required aria-required="true">
+                    <button type="submit">Send Message</button>
+                </form>
+            </article>
+        </section>
+        <section class="dynamic-items" id="dynamic-items" aria-label="Available Effects"></section>
+        <dialog id="apply-modal" class="modal" aria-labelledby="modal-message">
+            <div class="modal-content">
+                <h3 id="modal-message"></h3>
+                <button class="modal-close" aria-label="Close modal">×</button>
+            </div>
+        </dialog>
+    </main>
+    <footer>
+        <p>
+            © <span id="currentyear"></span> David Smith
+            <img src="images/us-flag.png" alt="US Flag" class="flag" width="24" height="16" loading="lazy">
+            | <a href="attributions.html">Attributions</a>
+        </p>
+        <p id="lastModified">Last Updated: </p>
+    </footer>
+</body>
+
+</html>

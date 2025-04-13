@@ -1,0 +1,416 @@
+/* Font Imports */
+@font-face {
+    font-family: 'Mojangles';
+    src: url('/mojangles.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Global Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 320px;
+    background-color: #f9f9f9;
+}
+
+/* Header Styles */
+header {
+    background-color: #2F4858;
+    color: white;
+    padding: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+}
+
+header h1 {
+    font-family: 'Mojangles', sans-serif;
+    font-size: 1.75rem;
+    margin: 0;
+    text-align: center;
+}
+
+.hamburger {
+    display: block;
+    background: none;
+    border: none;
+    color: #F5E050;
+    font-size: 1.5rem;
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    cursor: pointer;
+}
+
+.nav-links {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 1rem 0;
+}
+
+.nav-links.active {
+    display: flex;
+}
+
+.nav-links a {
+    color: #F5E050;
+    text-decoration: none;
+    font-size: 1.25rem;
+    padding: 0.5rem;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+/* Header Indicator for Active Page */
+.nav-links a[aria-current="page"] {
+    background-color: #F5E050;
+    color: #2F4858;
+    border-radius: 4px;
+    padding: 0.5rem;
+}
+
+/* Main Styles */
+main {
+    padding: 2rem 1rem;
+    width: 100%;
+    max-width: 1200px;
+    text-align: center;
+}
+
+main h2 {
+    font-family: 'Mojangles', sans-serif;
+    font-size: 1.5rem;
+    color: #2F4858;
+    margin: 0 0 1rem;
+}
+
+main p {
+    font-size: 1rem;
+    color: #2F4858;
+    margin: 0 0 2rem;
+}
+
+/* Tile Container */
+.tiles-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(256px, 1fr));
+    grid-template-rows: repeat(2, auto);
+    gap: 1rem;
+    max-width: 840px;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Specific Centering for index.html */
+.tiles-container.index-tiles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Tile Styles */
+.tile {
+    position: relative;
+    width: 256px;
+    height: 384px;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    transition: transform 0.2s ease;
+    box-sizing: border-box;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(255, 255, 255, 0.1);
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Background color based on server status */
+.tile.online {
+    background-color: rgba(40, 167, 69, 0.2);
+}
+
+.tile.offline {
+    background-color: rgba(220, 53, 69, 0.2);
+}
+
+/* Background images for index.html tiles */
+.java-tile {
+    background-image: url('images/javaEdition.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.bedrock-tile {
+    background-image: url('images/bedrockEdition.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+/* Image Grid for Tiled Cards (javaEdition.html, bedrockEdition.html) */
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 128px);
+    grid-template-rows: repeat(3, 128px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.image-grid img {
+    width: 128px;
+    height: 128px;
+    object-fit: cover;
+}
+
+.tile:hover {
+    transform: scale(1.05);
+}
+
+.tile h2, .tile h3 {
+    font-family: 'Mojangles', sans-serif;
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.95);
+    margin: 0.25rem 0;
+    background: none;
+    padding: 0;
+    width: 90%;
+    text-align: center;
+    z-index: 1;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.tile .status {
+    font-size: 0.8rem;
+    color: #0F1A2A;
+    background: none;
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    z-index: 1;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 1);
+}
+
+.tile.online .status {
+    color: #28a745;
+}
+
+.tile.offline .status {
+    color: #dc3545;
+}
+
+/* Player List Styles */
+.player-list {
+    list-style: none;
+    padding: 0;
+    margin: 0.5rem 0;
+    width: 90%;
+    text-align: center;
+    z-index: 1;
+}
+
+.player-list li {
+    font-size: 0.8rem;
+    color: #0F1A2A;
+    background: none;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 1);
+    margin: 0.2rem 0;
+}
+
+/* Form and Picker Styles */
+.picker, #contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    width: 90%;
+    margin: 0 auto 0.5rem;
+    background: none;
+    padding: 0;
+    z-index: 1;
+}
+
+.picker label, #contact-form label {
+    font-family: 'Mojangles', sans-serif; /* Match card titles */
+    font-size: 1.2rem; /* Match card titles */
+    color: rgba(255, 255, 255, 0.95); /* Match card titles */
+    background: none;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8); /* Match card titles */
+}
+
+.picker select, #contact-form input {
+    padding: 0.3rem;
+    font-size: 0.8rem;
+    color: #0F1A2A;
+    border: 1px solid #1A2A3A;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.action-btn, #contact-form button {
+    background-color: #F5E050;
+    color: #0F1A2A;
+    padding: 0.3rem 0.6rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8rem;
+}
+
+.action-btn:hover, #contact-form button:hover {
+    background-color: #FFD700;
+}
+
+/* Dynamic Items Section */
+.dynamic-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.effect-item {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: left;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.effect-item img {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 0.5rem;
+}
+
+.effect-item h4 {
+    font-family: 'Mojangles', sans-serif;
+    font-size: 0.9rem;
+    color: #0F1A2A;
+    margin: 0.5rem 0;
+}
+
+.effect-item p {
+    font-size: 0.8rem;
+    color: #0F1A2A;
+    margin: 0.25rem 0;
+}
+
+/* Modal Styles */
+dialog.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 400px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: none;
+    border-radius: 8px;
+    padding: 1.5rem;
+    z-index: 1000;
+}
+
+dialog.modal::backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    position: relative;
+}
+
+.modal-content h3 {
+    font-size: 0.9rem;
+    color: #0F1A2A;
+    margin: 0 0 1rem;
+}
+
+.modal-close {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #0F1A2A;
+    background: none;
+    border: none;
+}
+
+.modal-close:hover {
+    color: #F44336;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #2F4858;
+    color: white;
+    padding: 1rem;
+    width: 100%;
+    text-align: center;
+}
+
+footer p {
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+}
+
+footer img.flag {
+    width: 24px;
+    height: 16px;
+    vertical-align: middle;
+    margin-left: 0.5rem;
+}
+
+footer a {
+    color: #F5E050;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 840px) {
+    .tiles-container {
+        grid-template-columns: repeat(auto-fit, minmax(256px, 1fr));
+        grid-template-rows: auto;
+        max-width: 600px;
+    }
+}
+
+@media (max-width: 420px) {
+    .tiles-container {
+        grid-template-columns: 1fr;
+        max-width: 256px;
+    }
+    .tiles-container.index-tiles {
+        flex-direction: column;
+        align-items: center;
+    }
+    .tile {
+        width: 100%;
+        max-width: 256px;
+    }
+}
