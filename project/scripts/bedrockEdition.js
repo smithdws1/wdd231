@@ -1,48 +1,37 @@
-const RCON_API_URL = 'http://192.168.10.6:51000';
+// List of available images for tiling
+const imageList = [
+    "pic1.png",
+    "pic2.png",
+    "pic3.png",
+    "pic4.png",
+    "pic5.png",
+    "pic6.png"
+];
 
-export const fetchServerStatus = async () => {
-    try {
-        const url = `${RCON_API_URL}/api/server-status?edition=bedrock`;
-        const response = await fetch(url, {
-            method: 'GET',
-            headers: {
-                'Accept': 'application/json'
-            }
-        });
-        if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
-        const { online } = await response.json();
-        return online;
-    } catch (error) {
-        console.error('Failed to fetch Bedrock status:', error);
-        return false;
-    }
-};
+// Function to dynamically tile images in cards
+export const tileImages = () => {
+    const tiles = document.querySelectorAll('.tile');
+    tiles.forEach((tile, index) => {
+        const imageGrid = tile.querySelector('.image-grid');
+        if (!imageGrid) return;
 
-export const updateServerStatus = async () => {
-    const statusTile = document.querySelector('.server-status');
-    if (statusTile) {
-        const status = await fetchServerStatus();
-        statusTile.classList.remove('online', 'offline');
-        statusTile.classList.add(status ? 'online' : 'offline');
-        statusTile.querySelector('.status').textContent = status ? 'Online' : 'Offline';
-    }
+        // Select an image from the list based on the tile's index (cycle through the list)
+        const imageFile = imageList[index % imageList.length];
 
-    const playersTile = document.querySelector('.players-online');
-    if (playersTile) {
-        playersTile.classList.remove('online', 'offline');
-        playersTile.classList.add(status ? 'online' : 'offline');
-    }
-};
+        // Clear any existing images
+        imageGrid.innerHTML = '';
 
-export const updatePlayerList = async () => {
-    const playerList = document.querySelector('.player-list');
-    if (playerList) {
-        // Static list for demonstration
-        const players = ["Steve", "Alex"];
-        playerList.innerHTML = players.length > 0
-            ? players.map(player => `<li>${player}</li>`).join('')
-            : '<li>No players online.</li>';
-    }
+        // Add 6 images to create a 2x3 grid
+        for (let i = 0; i < 6; i++) {
+            const img = document.createElement('img');
+            img.src = `images/${imageFile}`;
+            img.alt = `${imageFile.split('.')[0]} Background`;
+            img.width = 128;
+            img.height = 128;
+            img.loading = 'lazy';
+            imageGrid.appendChild(img);
+        }
+    });
 };
 
 export const showModal = (message) => {
@@ -65,6 +54,14 @@ export const handleContactForm = () => {
             const name = document.getElementById('contact-name').value;
             const phone = document.getElementById('contact-phone').value;
             const email = document.getElementById('contact-email').value;
+
+            // Validate phone number
+            const phonePattern = /^[+]?[0-9\s()-]*$/;
+            if (!phonePattern.test(phone)) {
+                showModal('Invalid phone number. Please use only digits, spaces, dashes, plus sign, or parentheses (e.g., +1-123-456-7890).');
+                return;
+            }
+
             const messages = JSON.parse(localStorage.getItem('contactMessages') || '[]');
             messages.push({ name, phone, email, timestamp: new Date().toISOString() });
             localStorage.setItem('contactMessages', JSON.stringify(messages));
@@ -76,8 +73,7 @@ export const handleContactForm = () => {
 
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
-    updateServerStatus();
-    updatePlayerList();
+    tileImages();
     handleContactForm();
     document.querySelector('.modal-close').addEventListener('click', closeModal);
     document.querySelector('.hamburger').addEventListener('click', () => {

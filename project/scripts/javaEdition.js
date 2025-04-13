@@ -1,4 +1,16 @@
 const RCON_API_URL = 'http://192.168.10.6:51000';
+// Switch out for submission
+// const RCON_API_URL = 'http://toyland.mynetgear.com:51000';
+
+// List of available images for tiling
+const imageList = [
+    "pic1.png",
+    "pic2.png",
+    "pic3.png",
+    "pic4.png",
+    "pic5.png",
+    "pic6.png"
+];
 
 export const fetchServerStatus = async () => {
     try {
@@ -14,22 +26,48 @@ export const fetchServerStatus = async () => {
 
 export const fetchMinecraftData = async () => {
     try {
-        const response = await fetch('/data/minecraft-data.json');
+        console.log('Attempting to fetch ./data/minecraft-data.json');
+        const response = await fetch('./data/minecraft-data.json');
         if (!response.ok) throw new Error(`Network error: ${response.statusText}`);
         const data = await response.json();
-        console.log('Fetched Minecraft data:', data); // Debug log
+        console.log('Fetched Minecraft data:', data);
         return data;
     } catch (error) {
         console.error('Failed to fetch Minecraft data:', error);
-        return { effects: [], tools: [], weapons: [], armor: [], players: [] };
+        throw error;
     }
 };
 
-export const populateDropdowns = async () => {
-    const minecraftData = await fetchMinecraftData();
-    console.log('Players from minecraft-data.json:', minecraftData.players); // Debug log
+// Function to dynamically tile images in cards
+export const tileImages = () => {
+    const tiles = document.querySelectorAll('.tile');
+    tiles.forEach((tile, index) => {
+        const imageGrid = tile.querySelector('.image-grid');
+        if (!imageGrid) return;
 
+        // Select an image from the list based on the tile's index and cycle through the list
+        const imageFile = imageList[index % imageList.length];
+
+        // Clear any existing images
+        imageGrid.innerHTML = '';
+
+        // Add 6 images to create a 2x3 grid
+        for (let i = 0; i < 6; i++) {
+            const img = document.createElement('img');
+            img.src = `images/${imageFile}`;
+            img.alt = `${imageFile.split('.')[0]} Background`;
+            img.width = 128;
+            img.height = 128;
+            img.loading = 'lazy';
+            imageGrid.appendChild(img);
+        }
+    });
+};
+
+export const populatePlayerDropdowns = async (minecraftData) => {
     const players = minecraftData.players || [];
+    console.log('Players to populate:', players);
+
     if (!Array.isArray(players)) {
         console.error('Players is not an array:', players);
         return;
@@ -47,6 +85,7 @@ export const populateDropdowns = async () => {
             select.innerHTML = `<option value="">Select Player...</option>${
                 players.map(player => `<option value="${player}">${player}</option>`).join('')
             }`;
+            console.log(`Populated player dropdown ${id} with:`, players);
             if (players.length === 0) {
                 console.warn(`No players found for dropdown ${id}`);
                 select.innerHTML += `<option value="" disabled>No players available</option>`;
@@ -55,73 +94,49 @@ export const populateDropdowns = async () => {
             console.warn(`Dropdown with ID ${id} not found`);
         }
     });
+};
 
+export const populateDropdowns = async () => {
+    const minecraftData = await fetchMinecraftData();
+
+    // Populate player dropdowns first
+    await populatePlayerDropdowns(minecraftData);
+
+    // Populate effects and enchantments dropdowns
     const dropdowns = [
-        { id: 'effects-list', data: minecraftData.effects },
-        { id: 'weapon-list', data: minecraftData.weapons },
-        { id: 'armor-list', data: minecraftData.armor },
-        { id: 'tool-list', data: minecraftData.tools }
+        { id: 'effects-list', data: minecraftData.effects, type: 'effect' },
+        { id: 'weapon-list', data: minecraftData.weapons, type: 'weapon' },
+        { id: 'armor-list', data: minecraftData.armor, type: 'armor' },
+        { id: 'tool-list', data: minecraftData.tools, type: 'tool' }
     ];
-    dropdowns.forEach(({ id, data }) => {
+    dropdowns.forEach(({ id, data, type }) => {
+        console.log(`Processing dropdown ${id} with data:`, data);
         const select = document.getElementById(id);
         if (select) {
+            if (!Array.isArray(data)) {
+                console.error(`Data for ${id} is not an array:`, data);
+                select.innerHTML = `<option value="">Select...</option><option value="" disabled>No options available</option>`;
+                return;
+            }
             select.innerHTML = `<option value="">Select...</option>${
                 data.map(item => {
-                    const displayName = item.maxLevel > 1 ? `${item.name} ${romanize(item.maxLevel)}` : item.name;
-                    return `<option value="${JSON.stringify({ command: item.command, level: item.maxLevel })}">${displayName}</option>`;
-                }).join('')
+                    try {
+                        return `<option value="${JSON.stringify({ command: item.command, type })}">${item.name}</option>`;
+                    } catch (error) {
+                        console.error(`Error processing item in ${id}:`, item, error);
+                        return '';
+                    }
+                }).filter(option => option).join('')
             }`;
-            console.log(`Populated dropdown ${id} with data:`, data);
+            console.log(`Populated dropdown ${id} with options:`, Array.from(select.options).map(opt => opt.text));
+            if (data.length === 0) {
+                console.warn(`No data found for dropdown ${id}`);
+                select.innerHTML += `<option value="" disabled>No options available</option>`;
+            }
         } else {
             console.warn(`Dropdown with ID ${id} not found`);
         }
     });
-};
-
-function romanize(num) {
-    const lookup = [
-        { value: 1000, numeral: 'M' },
-        { value: 900, numeral: 'CM' },
-        { value: 500, numeral: 'D' },
-        { value: 400, numeral: 'CD' },
-        { value: 100, numeral: 'C' },
-        { value: 90, numeral: 'XC' },
-        { value: 50, numeral: 'L' },
-        { value: 40, numeral: 'XL' },
-        { value: 10, numeral: 'X' },
-        { value: 9, numeral: 'IX' },
-        { value: 5, numeral: 'V' },
-        { value: 4, numeral: 'IV' },
-        { value: 1, numeral: 'I' }
-    ];
-    let roman = '';
-    for (let i = 0; i < lookup.length; i++) {
-        while (num >= lookup[i].value) {
-            roman += lookup[i].numeral;
-            num -= lookup[i].value;
-        }
-    }
-    return roman;
-}
-
-export const renderDynamicItems = async () => {
-    const data = await fetchMinecraftData();
-    const container = document.getElementById('dynamic-items');
-    const effects = data.effects.slice(0, 15).map((effect, index) => ({
-        id: index + 1,
-        name: effect.name,
-        description: effect.description,
-        duration: `${effect.duration} seconds`,
-        icon: effect.icon
-    }));
-    container.innerHTML = effects.map(item => `
-        <article class="effect-item">
-            <img src="${item.icon}" alt="${item.name}" width="64" height="64" loading="lazy">
-            <h4>${item.name}</h4>
-            <p>${item.description}</p>
-            <p>Duration: ${item.duration}</p>
-        </article>
-    `).join('');
 };
 
 export const showModal = (message) => {
@@ -138,9 +153,8 @@ export const closeModal = () => {
 
 export const applyAction = async (type, player, value) => {
     try {
-        const { command, level } = JSON.parse(value);
-        const displayName = type === 'effect' ? command : `${command} ${romanize(level)}`;
-        showModal(`${type.charAt(0).toUpperCase() + type.slice(1)} "${displayName}" applied to ${player}!`);
+        const { command, type: actionType } = JSON.parse(value);
+        showModal(`${actionType.charAt(0).toUpperCase() + actionType.slice(1)} "${command}" applied to ${player}!`);
     } catch (error) {
         console.error(`Failed to apply ${type}:`, error);
         showModal(`Error applying ${type} to ${player}. Please try again.`);
@@ -172,6 +186,14 @@ export const handleForms = () => {
             const name = document.getElementById('contact-name').value;
             const phone = document.getElementById('contact-phone').value;
             const email = document.getElementById('contact-email').value;
+
+            // Validate phone number
+            const phonePattern = /^[+]?[0-9\s()-]*$/;
+            if (!phonePattern.test(phone)) {
+                showModal('Invalid phone number. Please use only digits, spaces, dashes, plus sign, or parentheses (e.g., +1-123-456-7890).');
+                return;
+            }
+
             const messages = JSON.parse(localStorage.getItem('contactMessages') || '[]');
             messages.push({ name, phone, email, timestamp: new Date().toISOString() });
             localStorage.setItem('contactMessages', JSON.stringify(messages));
@@ -193,7 +215,7 @@ export const handleServerReboot = () => {
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
     populateDropdowns();
-    renderDynamicItems();
+    tileImages();
     handleForms();
     handleServerReboot();
     document.querySelector('.modal-close').addEventListener('click', closeModal);

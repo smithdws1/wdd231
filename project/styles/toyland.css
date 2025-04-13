@@ -250,11 +250,11 @@ main p {
 }
 
 .picker label, #contact-form label {
-    font-family: 'Mojangles', sans-serif; /* Match card titles */
-    font-size: 1.2rem; /* Match card titles */
-    color: rgba(255, 255, 255, 0.95); /* Match card titles */
+    font-family: 'Mojangles', sans-serif;
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.95);
     background: none;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8); /* Match card titles */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
 }
 
 .picker select, #contact-form input {
@@ -328,8 +328,9 @@ dialog.modal {
     background-color: rgba(255, 255, 255, 0.9);
     border: none;
     border-radius: 8px;
-    padding: 1.5rem;
+    padding: 1rem; /* Reduced padding to ensure close button fits better */
     z-index: 1000;
+    box-sizing: border-box; /* Ensure padding doesn't affect overall size */
 }
 
 dialog.modal::backdrop {
@@ -348,13 +349,15 @@ dialog.modal::backdrop {
 
 .modal-close {
     position: absolute;
-    top: 0.5rem;
-    right: 0.5rem;
+    top: 0.5rem; /* Position close to the top edge */
+    right: 0.5rem; /* Position close to the right edge */
     font-size: 1.5rem;
     cursor: pointer;
     color: #0F1A2A;
     background: none;
     border: none;
+    line-height: 1;
+    padding: 0;
 }
 
 .modal-close:hover {
