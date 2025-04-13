@@ -305,6 +305,7 @@ dialog.modal::backdrop {
     font-size: 0.9rem;
     color: #0F1A2A;
     margin: 0 0 1rem;
+    padding-right: 2rem; /* Ensure text doesn’t overlap with the close button */
 }
 
 .modal-close {
@@ -317,7 +318,8 @@ dialog.modal::backdrop {
     background: none;
     border: none;
     line-height: 1;
-    padding: 0;
+    padding: 0.25rem 0.5rem; /* Add padding for better click area */
+    transition: color 0.2s ease;
 }
 
 .modal-close:hover {
