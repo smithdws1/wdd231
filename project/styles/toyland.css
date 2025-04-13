@@ -1,7 +1,7 @@
 /* Font Imports */
 @font-face {
     font-family: 'Mojangles';
-    src: url('/mojangles.ttf') format('truetype');
+    src: url('/wdd231/project/mojangles.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -154,18 +154,18 @@ main p {
 
 /* Background images for index.html tiles */
 .java-tile {
-    background-image: url('images/javaEdition.png');
+    background-image: url('/wdd231/project/images/javaEdition.png');
     background-size: cover;
     background-position: center;
 }
 
 .bedrock-tile {
-    background-image: url('images/bedrockEdition.jpg');
+    background-image: url('/wdd231/project/images/bedrockEdition.jpg');
     background-size: cover;
     background-position: center;
 }
 
-/* Image Grid for Tiled Cards (javaEdition.html, bedrockEdition.html) */
+/* Image Grid for Tiled Cards */
 .image-grid {
     display: grid;
     grid-template-columns: repeat(2, 128px);
@@ -282,41 +282,6 @@ main p {
     background-color: #FFD700;
 }
 
-/* Dynamic Items Section */
-.dynamic-items {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1rem;
-    margin-top: 2rem;
-}
-
-.effect-item {
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    padding: 1rem;
-    text-align: left;
-    background-color: rgba(255, 255, 255, 0.1);
-}
-
-.effect-item img {
-    width: 64px;
-    height: 64px;
-    margin-bottom: 0.5rem;
-}
-
-.effect-item h4 {
-    font-family: 'Mojangles', sans-serif;
-    font-size: 0.9rem;
-    color: #0F1A2A;
-    margin: 0.5rem 0;
-}
-
-.effect-item p {
-    font-size: 0.8rem;
-    color: #0F1A2A;
-    margin: 0.25rem 0;
-}
-
 /* Modal Styles */
 dialog.modal {
     position: fixed;
@@ -328,9 +293,9 @@ dialog.modal {
     background-color: rgba(255, 255, 255, 0.9);
     border: none;
     border-radius: 8px;
-    padding: 1rem; /* Reduced padding to ensure close button fits better */
+    padding: 1rem;
     z-index: 1000;
-    box-sizing: border-box; /* Ensure padding doesn't affect overall size */
+    box-sizing: border-box;
 }
 
 dialog.modal::backdrop {
@@ -349,8 +314,8 @@ dialog.modal::backdrop {
 
 .modal-close {
     position: absolute;
-    top: 0.5rem; /* Position close to the top edge */
-    right: 0.5rem; /* Position close to the right edge */
+    top: 0.5rem;
+    right: 0.5rem;
     font-size: 1.5rem;
     cursor: pointer;
     color: #0F1A2A;

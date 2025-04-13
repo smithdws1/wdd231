@@ -1,4 +1,6 @@
-// List of available images for tiling
+//const RCON_API_URL = 'https://192.168.10.6:51000';
+//Don't forget to switch for github submission
+
 const imageList = [
     "pic1.png",
     "pic2.png",

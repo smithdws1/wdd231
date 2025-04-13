@@ -1,7 +1,6 @@
-// const RCON_API_URL = 'http://192.168.10.6:51000';
-//Don't forget to change to public before submission
-const RCON_API_URL = 'http://toyland.mynetgear.com:51000';
-
+//const RCON_API_URL = 'https://192.168.10.6:51000';
+//Don't forget to switch for github submission
+const RCON_API_URL = 'https://toyland.mynetgear.com:51000';
 
 export const fetchServerStatus = async (edition) => {
     try {
@@ -23,20 +22,19 @@ export const fetchServerStatus = async (edition) => {
 
 export const updateServerTiles = async () => {
     const javaTile = document.querySelector('.java-tile');
-    const bedrockTile = document.querySelector('.bedrock-tile');
-
     if (javaTile) {
-        const javaStatus = await fetchServerStatus('java');
+        const status = await fetchServerStatus('java');
         javaTile.classList.remove('online', 'offline');
-        javaTile.classList.add(javaStatus ? 'online' : 'offline');
-        javaTile.querySelector('.status').textContent = javaStatus ? 'Online' : 'Offline';
+        javaTile.classList.add(status ? 'online' : 'offline');
+        javaTile.querySelector('.status').textContent = status ? 'Online' : 'Offline';
     }
 
+    const bedrockTile = document.querySelector('.bedrock-tile');
     if (bedrockTile) {
-        const bedrockStatus = await fetchServerStatus('bedrock');
+        const status = await fetchServerStatus('bedrock');
         bedrockTile.classList.remove('online', 'offline');
-        bedrockTile.classList.add(bedrockStatus ? 'online' : 'offline');
-        bedrockTile.querySelector('.status').textContent = bedrockStatus ? 'Online' : 'Offline';
+        bedrockTile.classList.add(status ? 'online' : 'offline');
+        bedrockTile.querySelector('.status').textContent = status ? 'Online' : 'Offline';
     }
 };
 
@@ -49,4 +47,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const isExpanded = navLinks.classList.contains('active');
         document.querySelector('.hamburger').setAttribute('aria-expanded', isExpanded);
     });
+    document.getElementById('currentyear').textContent = new Date().getFullYear();
+    document.getElementById('lastModified').textContent = `Last Updated: ${new Date(document.lastModified).toLocaleString()}`;
 });
