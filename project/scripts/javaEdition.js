@@ -12,6 +12,8 @@ const imageList = [
     "pic6.png"
 ];
 
+//ES Modules 1
+//API-Data Integration and Output 1
 export const fetchServerStatus = async () => {
     try {
         const response = await fetch(`${RCON_API_URL}/api/server-status?edition=java`);
@@ -24,6 +26,8 @@ export const fetchServerStatus = async () => {
     }
 };
 
+//ES Modules 2
+//API-Data Integration and Output 2
 export const fetchMinecraftData = async () => {
     try {
         console.log('Attempting to fetch ./data/minecraft-data.json');
@@ -38,6 +42,7 @@ export const fetchMinecraftData = async () => {
     }
 };
 
+//DOM Interaction 1
 // Function to dynamically tile images in cards
 export const tileImages = () => {
     const tiles = document.querySelectorAll('.tile');
@@ -64,6 +69,7 @@ export const tileImages = () => {
     });
 };
 
+//API/Data Integration and Output 3
 export const populatePlayerDropdowns = async (minecraftData) => {
     const players = minecraftData.players || [];
     console.log('Players to populate:', players);
@@ -96,6 +102,7 @@ export const populatePlayerDropdowns = async (minecraftData) => {
     });
 };
 
+//API/Data Integration and Output 4
 export const populateDropdowns = async () => {
     const minecraftData = await fetchMinecraftData();
 
@@ -139,6 +146,7 @@ export const populateDropdowns = async () => {
     });
 };
 
+//Modal Dialog Structure 1
 export const showModal = (message) => {
     const modal = document.getElementById('apply-modal');
     const modalMessage = document.getElementById('modal-message');
@@ -146,6 +154,7 @@ export const showModal = (message) => {
     modal.showModal();
 };
 
+//Modal Dialog Structure 2
 export const closeModal = () => {
     const modal = document.getElementById('apply-modal');
     modal.close();
@@ -161,6 +170,7 @@ export const applyAction = async (type, player, value) => {
     }
 };
 
+//Local Storage 1
 export const handleForms = () => {
     document.querySelectorAll('.picker').forEach(form => {
         form.addEventListener('submit', (e) => {
@@ -193,7 +203,7 @@ export const handleForms = () => {
                 showModal('Invalid phone number. Please use only digits, spaces, dashes, plus sign, or parentheses (e.g., +1-123-456-7890).');
                 return;
             }
-
+            //Local Storage 2
             const messages = JSON.parse(localStorage.getItem('contactMessages') || '[]');
             messages.push({ name, phone, email, timestamp: new Date().toISOString() });
             localStorage.setItem('contactMessages', JSON.stringify(messages));

@@ -2,6 +2,7 @@
 //Don't forget to switch for github submission
 const RCON_API_URL = 'https://toyland.mynetgear.com:51000';
 
+//ES Modules 1
 export const fetchServerStatus = async (edition) => {
     try {
         const url = `${RCON_API_URL}/api/server-status?edition=${edition}`;
