@@ -152,20 +152,15 @@ main p {
     background-color: rgba(220, 53, 69, 0.2);
 }
 
-/* Background images for index.html tiles */
-.java-tile {
-    background-image: url('/wdd231/project/images/javaEdition.png');
-    background-size: cover;
-    background-position: center;
+/* Image styles for index.html tiles */
+.edition-image {
+    max-width: 100%;
+    max-height: 70%; /* Limit height to fit within the tile */
+    object-fit: contain; /* Preserve aspect ratio */
+    margin-bottom: 0.5rem;
 }
 
-.bedrock-tile {
-    background-image: url('/wdd231/project/images/bedrockEdition.jpg');
-    background-size: cover;
-    background-position: center;
-}
-
-/* Image Grid for Tiled Cards */
+/* Image Grid for Tiled Cards (javaEdition.html, bedrockEdition.html) */
 .image-grid {
     display: grid;
     grid-template-columns: repeat(2, 128px);
