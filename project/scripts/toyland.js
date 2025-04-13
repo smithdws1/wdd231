@@ -1,6 +1,6 @@
-const RCON_API_URL = 'http://192.168.10.6:51000';
+// const RCON_API_URL = 'http://192.168.10.6:51000';
 //Don't forget to change to public before submission
-//const RCON_API_URL = 'http://toyland.mynetgear.com:51000';
+const RCON_API_URL = 'http://toyland.mynetgear.com:51000';
 
 
 export const fetchServerStatus = async (edition) => {
